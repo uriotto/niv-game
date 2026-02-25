@@ -1,0 +1,64 @@
+@import "tailwindcss";
+
+@theme {
+  --color-magic-purple: #7c3aed;
+  --color-magic-purple-light: #a78bfa;
+  --color-magic-gold: #f59e0b;
+  --color-magic-gold-light: #fbbf24;
+  --color-kingdom-sentences: #8b5cf6;
+  --color-kingdom-words: #10b981;
+  --color-kingdom-numbers: #3b82f6;
+  --color-kingdom-problems: #f97316;
+  --color-kingdom-patterns: #ec4899;
+  --color-star-gold: #fbbf24;
+  --color-star-silver: #9ca3af;
+  --font-family-game: 'Rubik', 'Arial', sans-serif;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-family-game);
+    background: linear-gradient(135deg, #1e1b4b 0%, #312e81 50%, #1e1b4b 100%);
+    min-height: 100vh;
+    margin: 0;
+    direction: rtl;
+  }
+}
+
+@layer utilities {
+  .text-shadow-glow {
+    text-shadow: 0 0 20px rgba(251, 191, 36, 0.5), 0 0 40px rgba(251, 191, 36, 0.3);
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  .animate-sparkle {
+    animation: sparkle 1.5s ease-in-out infinite;
+  }
+
+  .animate-bounce-in {
+    animation: bounceIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes sparkle {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.7; transform: scale(1.1); }
+}
+
+@keyframes bounceIn {
+  0% { transform: scale(0); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes confetti-fall {
+  0% { transform: translateY(-100vh) rotate(0deg); opacity: 1; }
+  100% { transform: translateY(100vh) rotate(720deg); opacity: 0; }
+}
