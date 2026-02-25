@@ -49,10 +49,10 @@ export default function GameLevel({ kingdom, levelIndex, questions, levelName, o
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
           onClick={onBack}
-          className="text-[#8080a0] hover:text-white text-sm cursor-pointer transition-colors"
+          className="glass-card rounded-xl px-4 py-2 text-[#c0b89c] hover:text-white hover:border-white/20 cursor-pointer text-base font-bold transition-all"
         >
           ← חזרה
         </motion.button>

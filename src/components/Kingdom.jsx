@@ -63,10 +63,10 @@ export default function Kingdom({ kingdom, progress, onComplete, onBack }) {
       {/* Back button */}
       <div className="w-full max-w-md flex justify-start mb-6">
         <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
           onClick={onBack}
-          className="text-[#8080a0] hover:text-white cursor-pointer text-sm transition-colors"
+          className="glass-card rounded-xl px-4 py-2 text-[#c0b89c] hover:text-white hover:border-white/20 cursor-pointer text-base font-bold transition-all"
         >
           ← חזרה למפה
         </motion.button>
