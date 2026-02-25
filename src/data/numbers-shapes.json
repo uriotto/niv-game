@@ -4,167 +4,167 @@
       {
         "shape": {
           "type": "triangle",
-          "numbers": [3, 5, 8],
+          "numbers": [12, 17, 29],
           "missingIndex": 2
         },
-        "options": [8, 7, 9, 6],
+        "options": [27, 29, 31, 28],
+        "correct": 1,
+        "operation": "העליון + השמאלי = הימני",
+        "hint": "חבר את 12 ו-17"
+      },
+      {
+        "shape": {
+          "type": "circle",
+          "numbers": [14, 22, 16, 8],
+          "missingIndex": 3
+        },
+        "options": [10, 6, 12, 8],
+        "correct": 3,
+        "operation": "סכום באלכסונים שווה",
+        "hint": "14+16=30, אז 22+?=30"
+      },
+      {
+        "shape": {
+          "type": "square",
+          "numbers": [9, 21, 18, 12],
+          "missingIndex": 0
+        },
+        "options": [9, 11, 15, 7],
         "correct": 0,
-        "operation": "העליון + השמאלי = הימני",
-        "hint": "חבר את שני המספרים האחרים"
-      },
-      {
-        "shape": {
-          "type": "triangle",
-          "numbers": [7, 4, 11],
-          "missingIndex": 0
-        },
-        "options": [6, 8, 7, 5],
-        "correct": 2,
-        "operation": "העליון + השמאלי = הימני",
-        "hint": "איזה מספר ועוד 4 שווה 11?"
-      },
-      {
-        "shape": {
-          "type": "circle",
-          "numbers": [3, 8, 7, 2],
-          "missingIndex": 2
-        },
-        "options": [6, 8, 7, 5],
-        "correct": 2,
-        "operation": "סכום באלכסונים שווה",
-        "hint": "3+?=8+2"
-      },
-      {
-        "shape": {
-          "type": "square",
-          "numbers": [1, 7, 6, 2],
-          "missingIndex": 1
-        },
-        "options": [5, 6, 7, 8],
-        "correct": 2,
         "operation": "סכום שורה עליונה = סכום שורה תחתונה",
-        "hint": "1+?=6+2"
+        "hint": "18+12=30, אז ?+21=30"
       },
       {
         "shape": {
           "type": "triangle",
-          "numbers": [12, 5, 7],
+          "numbers": [25, 11, 14],
           "missingIndex": 1
         },
-        "options": [4, 6, 5, 3],
+        "options": [13, 9, 11, 15],
         "correct": 2,
         "operation": "העליון = השמאלי + הימני",
-        "hint": "העליון שווה לסכום התחתונים"
+        "hint": "25 = ? + 14"
       },
       {
         "shape": {
           "type": "circle",
-          "numbers": [5, 9, 7, 3],
-          "missingIndex": 3
+          "numbers": [13, 22, 17, 8],
+          "missingIndex": 2
         },
-        "options": [4, 2, 3, 5],
-        "correct": 2,
+        "options": [15, 19, 13, 17],
+        "correct": 3,
         "operation": "סכום באלכסונים שווה",
-        "hint": "5+7=12, אז 9+?=12"
+        "hint": "13+?=22+8=30, אז ?=17"
       },
       {
         "shape": {
           "type": "square",
-          "numbers": [3, 8, 9, 2],
-          "missingIndex": 2
-        },
-        "options": [7, 8, 9, 10],
-        "correct": 2,
-        "operation": "סכום שורה עליונה = סכום שורה תחתונה",
-        "hint": "3+8=11, אז ?+2=11"
-      },
-      {
-        "shape": {
-          "type": "triangle",
-          "numbers": [6, 8, 14],
-          "missingIndex": 2
-        },
-        "options": [12, 13, 15, 14],
-        "correct": 3,
-        "operation": "העליון + השמאלי = הימני",
-        "hint": "חבר את 6 ו-8"
-      },
-      {
-        "shape": {
-          "type": "circle",
-          "numbers": [6, 11, 8, 3],
-          "missingIndex": 0
-        },
-        "options": [5, 7, 6, 4],
-        "correct": 2,
-        "operation": "סכום באלכסונים שווה",
-        "hint": "11+3=14, אז ?+8=14"
-      },
-      {
-        "shape": {
-          "type": "triangle",
-          "numbers": [15, 9, 6],
+          "numbers": [15, 13, 8, 20],
           "missingIndex": 1
         },
-        "options": [8, 10, 7, 9],
-        "correct": 3,
-        "operation": "העליון = השמאלי + הימני",
-        "hint": "15 = ? + 6"
-      },
-      {
-        "shape": {
-          "type": "square",
-          "numbers": [10, 4, 6, 8],
-          "missingIndex": 0
-        },
-        "options": [9, 11, 10, 12],
+        "options": [11, 15, 13, 17],
         "correct": 2,
         "operation": "סכום שורה עליונה = סכום שורה תחתונה",
-        "hint": "6+8=14, אז ?+4=14"
-      },
-      {
-        "shape": {
-          "type": "circle",
-          "numbers": [8, 3, 6, 11],
-          "missingIndex": 3
-        },
-        "options": [9, 10, 11, 12],
-        "correct": 2,
-        "operation": "סכום באלכסונים שווה",
-        "hint": "8+6=14, אז 3+?=14"
+        "hint": "8+20=28, אז 15+?=28"
       },
       {
         "shape": {
           "type": "triangle",
-          "numbers": [4, 9, 5],
+          "numbers": [8, 23, 15],
           "missingIndex": 0
         },
-        "options": [3, 5, 4, 6],
-        "correct": 2,
+        "options": [10, 6, 12, 8],
+        "correct": 3,
         "operation": "העליון + הימני = השמאלי",
-        "hint": "?+5=9"
-      },
-      {
-        "shape": {
-          "type": "square",
-          "numbers": [5, 13, 11, 7],
-          "missingIndex": 1
-        },
-        "options": [12, 14, 13, 15],
-        "correct": 2,
-        "operation": "סכום שורה עליונה = סכום שורה תחתונה",
-        "hint": "11+7=18, אז 5+?=18"
+        "hint": "?+15=23"
       },
       {
         "shape": {
           "type": "circle",
-          "numbers": [10, 7, 4, 1],
+          "numbers": [17, 11, 9, 15],
+          "missingIndex": 0
+        },
+        "options": [19, 17, 13, 15],
+        "correct": 1,
+        "operation": "סכום באלכסונים שווה",
+        "hint": "?+9=11+15=26, אז ?=17"
+      },
+      {
+        "shape": {
+          "type": "square",
+          "numbers": [22, 7, 14, 15],
+          "missingIndex": 3
+        },
+        "options": [13, 17, 15, 11],
+        "correct": 2,
+        "operation": "סכום שורה עליונה = סכום שורה תחתונה",
+        "hint": "22+7=29, אז 14+?=29"
+      },
+      {
+        "shape": {
+          "type": "triangle",
+          "numbers": [27, 18, 9],
           "missingIndex": 2
         },
-        "options": [3, 5, 4, 6],
+        "options": [9, 11, 7, 13],
+        "correct": 0,
+        "operation": "העליון - השמאלי = הימני",
+        "hint": "27-18=?"
+      },
+      {
+        "shape": {
+          "type": "circle",
+          "numbers": [21, 20, 13, 14],
+          "missingIndex": 1
+        },
+        "options": [18, 22, 16, 20],
+        "correct": 3,
+        "operation": "סכום באלכסונים שווה",
+        "hint": "21+13=34, אז ?+14=34"
+      },
+      {
+        "shape": {
+          "type": "square",
+          "numbers": [16, 11, 19, 8],
+          "missingIndex": 2
+        },
+        "options": [19, 21, 15, 17],
+        "correct": 0,
+        "operation": "סכום שורה עליונה = סכום שורה תחתונה",
+        "hint": "16+11=27, אז ?+8=27"
+      },
+      {
+        "shape": {
+          "type": "triangle",
+          "numbers": [13, 19, 6],
+          "missingIndex": 1
+        },
+        "options": [21, 19, 17, 15],
+        "correct": 1,
+        "operation": "השמאלי - העליון = הימני",
+        "hint": "?-13=6, אז ?=13+6"
+      },
+      {
+        "shape": {
+          "type": "circle",
+          "numbers": [25, 10, 5, 20],
+          "missingIndex": 0
+        },
+        "options": [25, 15, 30, 20],
+        "correct": 0,
+        "operation": "סכום באלכסונים שווה",
+        "hint": "?+5=10+20=30, אז ?=25"
+      },
+      {
+        "shape": {
+          "type": "square",
+          "numbers": [18, 12, 6, 24],
+          "missingIndex": 0
+        },
+        "options": [16, 20, 18, 14],
         "correct": 2,
-        "operation": "סדרה יורדת בקפיצות של 3",
-        "hint": "10, 7, ?, 1 - כמה מחסרים כל פעם?"
+        "operation": "סכום שורה עליונה = סכום שורה תחתונה",
+        "hint": "6+24=30, אז ?+12=30"
       }
     ],
     [
@@ -185,9 +185,9 @@
           "numbers": [6, 8, 2, 24],
           "missingIndex": 3
         },
-        "options": [22, 24, 20, 26],
-        "correct": 1,
-        "operation": "מכפלת שורה עליונה = מכפלת שורה תחתונה",
+        "options": [24, 22, 20, 26],
+        "correct": 0,
+        "operation": "מכפלת אלכסונים שווה",
         "hint": "6 כפול 8 = 48, אז 2 כפול ? = 48"
       },
       {
@@ -207,8 +207,8 @@
           "numbers": [42, 7, 6],
           "missingIndex": 0
         },
-        "options": [40, 42, 44, 48],
-        "correct": 1,
+        "options": [40, 44, 48, 42],
+        "correct": 3,
         "operation": "העליון = השמאלי כפול הימני",
         "hint": "7 כפול 6 שווה..."
       },
@@ -218,9 +218,9 @@
           "numbers": [8, 5, 10, 4],
           "missingIndex": 2
         },
-        "options": [9, 10, 11, 12],
-        "correct": 1,
-        "operation": "מכפלת שורה עליונה = מכפלת שורה תחתונה",
+        "options": [10, 9, 11, 12],
+        "correct": 0,
+        "operation": "מכפלת אלכסונים שווה",
         "hint": "8 כפול 5 = 40, אז ? כפול 4 = 40"
       },
       {
@@ -240,8 +240,8 @@
           "numbers": [9, 3, 27],
           "missingIndex": 1
         },
-        "options": [2, 4, 3, 5],
-        "correct": 2,
+        "options": [2, 3, 4, 5],
+        "correct": 1,
         "operation": "העליון כפול השמאלי = הימני",
         "hint": "9 כפול ? = 27"
       },
@@ -251,9 +251,9 @@
           "numbers": [12, 6, 3, 24],
           "missingIndex": 3
         },
-        "options": [22, 24, 18, 20],
-        "correct": 1,
-        "operation": "מכפלת שורה עליונה = מכפלת שורה תחתונה",
+        "options": [22, 18, 20, 24],
+        "correct": 3,
+        "operation": "מכפלת אלכסונים שווה",
         "hint": "12 כפול 6 = 72, אז 3 כפול ? = 72"
       },
       {
@@ -262,8 +262,8 @@
           "numbers": [5, 9, 15, 3],
           "missingIndex": 2
         },
-        "options": [12, 13, 15, 16],
-        "correct": 2,
+        "options": [12, 15, 13, 16],
+        "correct": 1,
         "operation": "מכפלת שורה עליונה = מכפלת שורה תחתונה",
         "hint": "5 כפול 9 = 45, אז ? כפול 3 = 45"
       },
@@ -273,8 +273,8 @@
           "numbers": [48, 8, 6],
           "missingIndex": 2
         },
-        "options": [5, 7, 6, 8],
-        "correct": 2,
+        "options": [5, 7, 8, 6],
+        "correct": 3,
         "operation": "העליון חלקי השמאלי = הימני",
         "hint": "48 חלקי 8 שווה..."
       },
@@ -286,7 +286,7 @@
         },
         "options": [6, 7, 8, 9],
         "correct": 1,
-        "operation": "מכפלת שורה עליונה = מכפלת שורה תחתונה",
+        "operation": "מכפלת אלכסונים שווה",
         "hint": "? כפול 3 = 21 כפול 1"
       },
       {
@@ -295,8 +295,8 @@
           "numbers": [7, 4, 2, 14],
           "missingIndex": 3
         },
-        "options": [12, 13, 14, 16],
-        "correct": 2,
+        "options": [14, 12, 13, 16],
+        "correct": 0,
         "operation": "מכפלת שורה עליונה = מכפלת שורה תחתונה",
         "hint": "7 כפול 4 = 28, אז 2 כפול ? = 28"
       },
@@ -317,9 +317,9 @@
           "numbers": [15, 2, 5, 6],
           "missingIndex": 1
         },
-        "options": [2, 3, 4, 1],
-        "correct": 0,
-        "operation": "מכפלת שורה עליונה = מכפלת שורה תחתונה",
+        "options": [3, 4, 2, 1],
+        "correct": 2,
+        "operation": "מכפלת אלכסונים שווה",
         "hint": "15 כפול ? = 5 כפול 6"
       },
       {
@@ -328,8 +328,8 @@
           "numbers": [10, 5, 25, 2],
           "missingIndex": 0
         },
-        "options": [8, 9, 10, 12],
-        "correct": 2,
+        "options": [8, 9, 12, 10],
+        "correct": 3,
         "operation": "מכפלת שורה עליונה = מכפלת שורה תחתונה",
         "hint": "25 כפול 2 = 50, אז ? כפול 5 = 50"
       }
@@ -363,8 +363,8 @@
           "numbers": [6, 10, 15, 4],
           "missingIndex": 2
         },
-        "options": [14, 15, 16, 12],
-        "correct": 1,
+        "options": [15, 14, 16, 12],
+        "correct": 0,
         "operation": "מכפלת שורה עליונה = מכפלת שורה תחתונה",
         "hint": "6 כפול 10 = 60, אז ? כפול 4 = 60"
       },
@@ -385,8 +385,8 @@
           "numbers": [6, 14, 12, 28],
           "missingIndex": 2
         },
-        "options": [10, 11, 12, 14],
-        "correct": 2,
+        "options": [10, 11, 14, 12],
+        "correct": 3,
         "operation": "כל מספר למטה הוא כפול 2 מהמספר שמעליו",
         "hint": "6 כפול 2 = ?, 14 כפול 2 = 28"
       },
@@ -418,8 +418,8 @@
           "numbers": [2, 6, 18, 54],
           "missingIndex": 2
         },
-        "options": [12, 15, 18, 24],
-        "correct": 2,
+        "options": [18, 12, 15, 24],
+        "correct": 0,
         "operation": "סדרה: כל מספר הוא הקודם כפול 3",
         "hint": "2, 6, ?, 54 - כמה כופלים כל פעם?"
       },
@@ -429,8 +429,8 @@
           "numbers": [12, 3, 9, 4],
           "missingIndex": 1
         },
-        "options": [2, 3, 4, 5],
-        "correct": 1,
+        "options": [2, 4, 5, 3],
+        "correct": 3,
         "operation": "מכפלת שורה עליונה = מכפלת שורה תחתונה",
         "hint": "9 כפול 4 = 36, אז 12 כפול ? = 36"
       },
@@ -440,8 +440,8 @@
           "numbers": [8, 7, 63],
           "missingIndex": 1
         },
-        "options": [6, 7, 8, 9],
-        "correct": 1,
+        "options": [6, 8, 9, 7],
+        "correct": 3,
         "operation": "(העליון + 1) כפול ? = הימני",
         "hint": "8 + 1 = 9, אז 9 כפול ? = 63"
       },
@@ -451,8 +451,8 @@
           "numbers": [5, 11, 10, 22],
           "missingIndex": 1
         },
-        "options": [9, 10, 11, 13],
-        "correct": 2,
+        "options": [11, 9, 10, 13],
+        "correct": 0,
         "operation": "כל מספר למטה הוא כפול 2 מהמספר שמעליו",
         "hint": "5 כפול 2 = 10, ? כפול 2 = 22"
       },
@@ -484,9 +484,9 @@
           "numbers": [8, 15, 4, 30],
           "missingIndex": 0
         },
-        "options": [6, 7, 8, 10],
-        "correct": 2,
-        "operation": "מכפלת שורה עליונה = מכפלת שורה תחתונה",
+        "options": [7, 10, 6, 8],
+        "correct": 3,
+        "operation": "מכפלת אלכסונים שווה",
         "hint": "? כפול 15 = 4 כפול 30"
       },
       {

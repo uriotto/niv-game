@@ -2,467 +2,1130 @@
   "levels": [
     [
       {
-        "type": "sequence",
-        "sequence": ["🔴", "🔵", "🔴", "🔵", null],
-        "options": ["🔴", "🟢", "🔵", "🟡"],
+        "type": "matrix",
+        "matrix": [
+          [
+            {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
+          ],
+          [
+            {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+            {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0}
+          ],
+          [
+            {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+            {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            null
+          ]
+        ],
+        "missingRow": 2,
+        "missingCol": 2,
+        "options": [
+          {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "diamond", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0}
+        ],
         "correct": 0,
-        "hint": "שימו לב לסדר החוזר של הצבעים - אדום וכחול מתחלפים"
+        "hint": "בכל שורה ובכל עמודה מופיעות שלוש צורות שונות - עיגול, ריבוע ומשולש"
+      },
+      {
+        "type": "sequence",
+        "sequence": [
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "circle", "fill": "none", "stroke": "#ef4444", "rotation": 0},
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "circle", "fill": "none", "stroke": "#ef4444", "rotation": 0},
+          null
+        ],
+        "options": [
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "circle", "fill": "none", "stroke": "#ef4444", "rotation": 0},
+          {"type": "square", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "circle", "fill": "none", "stroke": "#3b82f6", "rotation": 0}
+        ],
+        "correct": 0,
+        "hint": "עיגול מלא ועיגול ריק מתחלפים לסירוגין"
       },
       {
         "type": "matrix",
         "matrix": [
-          ["🔴", "🔵", "🟢"],
-          ["🔵", "🟢", "🔴"],
-          ["🟢", "🔴", null]
+          [
+            {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0}
+          ],
+          [
+            {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 0}
+          ],
+          [
+            {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
+            null
+          ]
         ],
         "missingRow": 2,
         "missingCol": 2,
-        "options": ["🔵", "🔴", "🟢", "🟡"],
+        "options": [
+          {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "circle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "square", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0}
+        ],
         "correct": 0,
-        "hint": "בכל שורה ובכל עמודה מופיעים שלושת הצבעים פעם אחת"
+        "hint": "ריבועים מלאים וריקים מתחלפים כמו לוח שחמט"
       },
       {
         "type": "sequence",
-        "sequence": ["⭐", "⭐", "🔵", "⭐", "⭐", "🔵", "⭐", "⭐", null],
-        "options": ["⭐", "🔴", "🔵", "🟢"],
+        "sequence": [
+          {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "circle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          null
+        ],
+        "options": [
+          {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "diamond", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "circle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
+        ],
         "correct": 2,
-        "hint": "ספרו כמה כוכבים מופיעים לפני כל עיגול כחול"
+        "hint": "שלוש צורות חוזרות באותו סדר: משולש, ריבוע, עיגול"
       },
       {
         "type": "matrix",
         "matrix": [
-          ["⬛", "⬜", "⬛"],
-          ["⬜", "⬛", "⬜"],
-          ["⬛", "⬜", null]
-        ],
-        "missingRow": 2,
-        "missingCol": 2,
-        "options": ["⬜", "⬛", "🔶", "🔷"],
-        "correct": 1,
-        "hint": "שחור ולבן מתחלפים כמו לוח שחמט"
-      },
-      {
-        "type": "sequence",
-        "sequence": ["🔴", "🔴", "🔵", "🔵", "🔴", "🔴", "🔵", null],
-        "options": ["🔴", "🔵", "🟢", "🟡"],
-        "correct": 1,
-        "hint": "כל צבע מופיע פעמיים ברצף לפני שמתחלף"
-      },
-      {
-        "type": "matrix",
-        "matrix": [
-          ["❤️", "💙", "💚"],
-          ["💚", "❤️", "💙"],
-          ["💙", null, "❤️"]
+          [
+            {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "circle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "circle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
+          ],
+          [
+            {"type": "square", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
+          ],
+          [
+            {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            null,
+            {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
+          ]
         ],
         "missingRow": 2,
         "missingCol": 1,
-        "options": ["❤️", "💙", "💚", "💛"],
-        "correct": 2,
-        "hint": "בכל שורה מופיעים שלושה לבבות בצבעים שונים"
-      },
-      {
-        "type": "sequence",
-        "sequence": ["🔺", "🔵", "🔺", "🔵", "🔺", null],
-        "options": ["🔺", "🔵", "🔻", "🟢"],
-        "correct": 1,
-        "hint": "משולש ועיגול מתחלפים לסירוגין"
-      },
-      {
-        "type": "matrix",
-        "matrix": [
-          ["🔶", "🔷", "🔶"],
-          ["🔷", "🔶", "🔷"],
-          [null, "🔷", "🔶"]
+        "options": [
+          {"type": "circle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "triangle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0}
         ],
-        "missingRow": 2,
-        "missingCol": 0,
-        "options": ["🔷", "🔶", "🔸", "🔹"],
-        "correct": 1,
-        "hint": "כתום וכחול מתחלפים בכל שורה ובכל עמודה"
-      },
-      {
-        "type": "sequence",
-        "sequence": ["🟢", "🟡", "🔴", "🟢", "🟡", "🔴", "🟢", "🟡", null],
-        "options": ["🟢", "🔴", "🟡", "🔵"],
-        "correct": 1,
-        "hint": "שלושה צבעים חוזרים באותו סדר - ירוק, צהוב, ו...?"
-      },
-      {
-        "type": "matrix",
-        "matrix": [
-          ["🔴", "🔴", "🔵"],
-          ["🔴", "🔵", "🔵"],
-          ["🔵", "🔵", null]
-        ],
-        "missingRow": 2,
-        "missingCol": 2,
-        "options": ["🔵", "🔴", "🟢", "🟡"],
-        "correct": 1,
-        "hint": "ספרו כמה אדומים וכמה כחולים בכל שורה - מה משתנה?"
-      },
-      {
-        "type": "sequence",
-        "sequence": ["⬛", "⬜", "⬜", "⬛", "⬜", "⬜", null],
-        "options": ["⬜", "⬛", "🔶", "🔷"],
-        "correct": 1,
-        "hint": "חפשו דפוס חוזר: שחור אחד ואז שני לבנים"
-      },
-      {
-        "type": "matrix",
-        "matrix": [
-          ["⭐", "🔵", "⭐"],
-          ["🔵", "⭐", "🔵"],
-          ["⭐", null, "⭐"]
-        ],
-        "missingRow": 2,
-        "missingCol": 1,
-        "options": ["⭐", "🔵", "🟡", "🔴"],
-        "correct": 1,
-        "hint": "כוכבים ועיגולים מתחלפים כמו דמקה"
-      },
-      {
-        "type": "matrix",
-        "matrix": [
-          ["🟡", "🟢", "🔴"],
-          ["🔴", "🟡", "🟢"],
-          ["🟢", null, "🟡"]
-        ],
-        "missingRow": 2,
-        "missingCol": 1,
-        "options": ["🟡", "🔴", "🟢", "🔵"],
-        "correct": 1,
-        "hint": "כל צבע מופיע פעם אחת בלבד בכל שורה ובכל עמודה"
-      },
-      {
-        "type": "sequence",
-        "sequence": ["🔵", "🔵", "🔵", "🔴", "🔴", "🔴", "🟢", "🟢", null],
-        "options": ["🔴", "🔵", "🟢", "🟡"],
-        "correct": 2,
-        "hint": "כל צבע מופיע שלוש פעמים ברצף"
-      },
-      {
-        "type": "matrix",
-        "matrix": [
-          ["🔸", "🔹", "🔸"],
-          ["🔹", "🔸", null],
-          ["🔸", "🔹", "🔸"]
-        ],
-        "missingRow": 1,
-        "missingCol": 2,
-        "options": ["🔸", "🔹", "🔶", "🔷"],
-        "correct": 1,
-        "hint": "הסתכלו על העמודה השלישית - מה הדפוס?"
-      }
-    ],
-    [
-      {
-        "type": "matrix",
-        "matrix": [
-          ["🔴", "🔵", "🟢"],
-          ["🔵", "🟢", "🟡"],
-          ["🟢", "🟡", null]
-        ],
-        "missingRow": 2,
-        "missingCol": 2,
-        "options": ["🔴", "🔵", "🟢", "🟡"],
-        "correct": 0,
-        "hint": "הסתכלו על האלכסונים - מה מופיע באלכסון הראשי?"
-      },
-      {
-        "type": "sequence",
-        "sequence": ["🔴", "🔵", "🔵", "🔴", "🔵", "🔵", "🔵", "🔴", "🔵", "🔵", "🔵", "🔵", null],
-        "options": ["🔴", "🔵", "🟢", "🟡"],
-        "correct": 0,
-        "hint": "ספרו כמה כחולים מופיעים בין כל שני אדומים - המספר גדל"
-      },
-      {
-        "type": "matrix",
-        "matrix": [
-          ["⬆️", "➡️", "⬇️"],
-          ["➡️", "⬇️", "⬅️"],
-          ["⬇️", "⬅️", null]
-        ],
-        "missingRow": 2,
-        "missingCol": 2,
-        "options": ["⬆️", "➡️", "⬇️", "⬅️"],
-        "correct": 0,
-        "hint": "החצים מסתובבים בכיוון השעון - כל שורה מתחילה חץ אחד קדימה"
-      },
-      {
-        "type": "sequence",
-        "sequence": ["🔴", "🔵", "🟢", "🔵", "🟢", "🟡", "🟢", "🟡", null],
-        "options": ["🔴", "🔵", "🟢", "🔶"],
-        "correct": 0,
-        "hint": "כל שלישייה חולקת שני איברים עם השלישייה הבאה"
-      },
-      {
-        "type": "matrix",
-        "matrix": [
-          ["🔴", "🔴", "🔵"],
-          ["🔴", "🔵", "🔵"],
-          ["🔵", null, "🔴"]
-        ],
-        "missingRow": 2,
-        "missingCol": 1,
-        "options": ["🔴", "🔵", "🟢", "🟡"],
-        "correct": 0,
-        "hint": "בכל שורה יש בדיוק אדום אחד או שניים - וכנ\"ל בעמודות"
-      },
-      {
-        "type": "sequence",
-        "sequence": ["⭐", "🔵", "⭐", "⭐", "🔵", "⭐", "⭐", "⭐", "🔵", null],
-        "options": ["⭐", "🔵", "🔴", "🟡"],
-        "correct": 0,
-        "hint": "מספר הכוכבים לפני העיגול הכחול גדל בכל פעם"
-      },
-      {
-        "type": "matrix",
-        "matrix": [
-          ["🔺", "🔵", "⬛"],
-          ["⬛", "🔺", "🔵"],
-          ["🔵", null, "🔺"]
-        ],
-        "missingRow": 2,
-        "missingCol": 1,
-        "options": ["🔵", "⬛", "🔺", "🔴"],
-        "correct": 1,
-        "hint": "שלושה סמלים מתחלפים - כל אחד מופיע פעם אחת בכל שורה ועמודה"
-      },
-      {
-        "type": "sequence",
-        "sequence": ["➡️", "⬆️", "➡️", "➡️", "⬆️", "⬆️", "➡️", "➡️", "➡️", "⬆️", "⬆️", "⬆️", null],
-        "options": ["➡️", "⬆️", "⬇️", "⬅️"],
-        "correct": 0,
-        "hint": "מספר החצים מכל סוג גדל - חפשו את הדפוס"
-      },
-      {
-        "type": "matrix",
-        "matrix": [
-          ["🔴", "🟡", "🔵"],
-          ["🟡", "🔵", "🟢"],
-          [null, "🟢", "🟣"]
-        ],
-        "missingRow": 2,
-        "missingCol": 0,
-        "options": ["🔵", "🔴", "🟢", "🟡"],
-        "correct": 0,
-        "hint": "כל שורה זזה צבע אחד קדימה ומוסיפה צבע חדש"
-      },
-      {
-        "type": "sequence",
-        "sequence": ["🔴", "🔵", "🔴", "🟢", "🔴", "🔵", "🔴", "🟢", "🔴", null],
-        "options": ["🔵", "🟢", "🔴", "🟡"],
-        "correct": 0,
-        "hint": "אדום מופיע במקומות האי-זוגיים. מה הדפוס במקומות הזוגיים?"
-      },
-      {
-        "type": "matrix",
-        "matrix": [
-          ["⬛", "⬛", "⬜"],
-          ["⬛", "⬜", "⬜"],
-          ["⬜", "⬜", null]
-        ],
-        "missingRow": 2,
-        "missingCol": 2,
-        "options": ["⬜", "⬛", "🔶", "🔷"],
-        "correct": 0,
-        "hint": "ספרו את השחורים בכל שורה - מה קורה למספר?"
-      },
-      {
-        "type": "matrix",
-        "matrix": [
-          ["🔶", "🔷", "🔶"],
-          ["🔷", null, "🔷"],
-          ["🔶", "🔷", "🔶"]
-        ],
-        "missingRow": 1,
-        "missingCol": 1,
-        "options": ["🔷", "🔶", "🔸", "🔹"],
-        "correct": 1,
-        "hint": "הסתכלו על הצורה הכללית - יש סימטריה מכל הכיוונים"
-      },
-      {
-        "type": "sequence",
-        "sequence": ["🔴", "🔵", "🟢", "🟡", "🔴", "🔵", "🟢", "🟡", "🔴", "🔵", "🟢", null],
-        "options": ["🔴", "🟡", "🔵", "🟢"],
-        "correct": 1,
-        "hint": "ארבעה צבעים חוזרים במחזור קבוע"
-      },
-      {
-        "type": "matrix",
-        "matrix": [
-          ["💚", "💙", "❤️"],
-          ["❤️", "💚", null],
-          ["💙", "❤️", "💚"]
-        ],
-        "missingRow": 1,
-        "missingCol": 2,
-        "options": ["💚", "💙", "❤️", "💛"],
-        "correct": 1,
-        "hint": "כל לב צבעוני מופיע בדיוק פעם אחת בכל שורה ובכל עמודה"
-      },
-      {
-        "type": "sequence",
-        "sequence": ["⬛", "⬜", "⬛", "⬛", "⬜", "⬜", "⬛", "⬛", "⬛", "⬜", "⬜", null],
-        "options": ["⬛", "⬜", "🔶", "🔷"],
-        "correct": 1,
-        "hint": "מספר השחורים והלבנים ברצף גדל בכל קבוצה"
-      }
-    ],
-    [
-      {
-        "type": "matrix",
-        "matrix": [
-          ["⬆️", "➡️", "⬇️"],
-          ["⬅️", "⬆️", "➡️"],
-          ["⬇️", null, "⬆️"]
-        ],
-        "missingRow": 2,
-        "missingCol": 1,
-        "options": ["⬅️", "➡️", "⬆️", "⬇️"],
-        "correct": 0,
-        "hint": "כל חץ מסתובב 90 מעלות בין שורה לשורה - עקבו אחרי העמודות"
-      },
-      {
-        "type": "sequence",
-        "sequence": ["🔴", "🔵", "🟢", "🔵", "🟢", "🟡", "🟢", "🟡", "🟣", "🟡", "🟣", null],
-        "options": ["🔴", "🤎", "🔵", "🟤"],
         "correct": 3,
-        "hint": "כל שלישייה מזיזה את הצבעים ומוסיפה צבע חדש בסוף"
-      },
-      {
-        "type": "matrix",
-        "matrix": [
-          ["🔴", "🔵", "🟢"],
-          ["🔵", "🟢", "🔴"],
-          [null, "🔴", "🔵"]
-        ],
-        "missingRow": 2,
-        "missingCol": 0,
-        "options": ["🟡", "🔴", "🟢", "🔵"],
-        "correct": 2,
-        "hint": "כל שורה היא הזזה מעגלית של השורה הקודמת"
+        "hint": "כל שורה היא צורה אחת, כל עמודה היא צבע אחד"
       },
       {
         "type": "sequence",
-        "sequence": ["⬆️", "➡️", "⬇️", "⬅️", "⬆️", "➡️", "⬇️", null],
-        "options": ["⬆️", "⬅️", "➡️", "⬇️"],
+        "sequence": [
+          {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0},
+          {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0},
+          {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+          null
+        ],
+        "options": [
+          {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0},
+          {"type": "diamond", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "star", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0}
+        ],
         "correct": 1,
-        "hint": "החצים מסתובבים בכיוון השעון ברצף קבוע"
+        "hint": "שני כוכבים ואז יהלום - הדפוס חוזר"
       },
       {
         "type": "matrix",
         "matrix": [
-          ["🔴", "🔶", "🟡"],
-          ["🔶", "🟡", "🟢"],
-          ["🟡", "🟢", null]
-        ],
-        "missingRow": 2,
-        "missingCol": 2,
-        "options": ["🔵", "🔴", "🟡", "🟢"],
-        "correct": 0,
-        "hint": "הצבעים מתקדמים באלכסונים - כל אלכסון הוא צבע אחד"
-      },
-      {
-        "type": "sequence",
-        "sequence": ["🔴", "🔵", "🔴", "🔵", "🔴", "🟢", "🔴", "🟢", "🔴", "🟡", "🔴", null],
-        "options": ["🟡", "🔴", "🔵", "🟢"],
-        "correct": 0,
-        "hint": "אדום מופיע במקומות קבועים. הצבע השני משתנה כל שני זוגות"
-      },
-      {
-        "type": "matrix",
-        "matrix": [
-          ["⭐", "🔵", "🔺"],
-          ["🔺", "⭐", "🔵"],
-          ["🔵", null, "⭐"]
+          [
+            {"type": "diamond", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+            {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "star", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0}
+          ],
+          [
+            {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "star", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0},
+            {"type": "diamond", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0}
+          ],
+          [
+            {"type": "star", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0},
+            null,
+            {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0}
+          ]
         ],
         "missingRow": 2,
         "missingCol": 1,
-        "options": ["🔵", "⭐", "🔺", "⬛"],
-        "correct": 2,
-        "hint": "שלושה סמלים שונים - כל אחד מופיע פעם אחת בכל שורה, עמודה ואלכסון"
-      },
-      {
-        "type": "sequence",
-        "sequence": ["🔴", "🔴", "🔵", "🔴", "🔴", "🔴", "🔵", "🔵", "🔴", "🔴", "🔴", "🔴", "🔵", "🔵", "🔵", null],
-        "options": ["🔴", "🔵", "🟢", "🟡"],
-        "correct": 0,
-        "hint": "מספר האדומים גדל ב-1 כל פעם, ומספר הכחולים גם גדל ב-1"
-      },
-      {
-        "type": "matrix",
-        "matrix": [
-          ["⬆️", "⬆️", "➡️"],
-          ["⬆️", "➡️", "⬇️"],
-          ["➡️", "⬇️", null]
+        "options": [
+          {"type": "star", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0},
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "diamond", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0}
         ],
-        "missingRow": 2,
-        "missingCol": 2,
-        "options": ["⬅️", "⬆️", "⬇️", "➡️"],
         "correct": 2,
-        "hint": "עקבו אחרי האלכסונים - כל אלכסון מכיל אותו חץ"
+        "hint": "כל צורה מופיעה בדיוק פעם אחת בכל שורה ובכל עמודה"
       },
       {
         "type": "sequence",
-        "sequence": ["⬛", "⬜", "🔶", "⬜", "🔶", "⬛", "🔶", "⬛", null],
-        "options": ["⬜", "⬛", "🔶", "🔷"],
-        "correct": 0,
-        "hint": "שלושה סמלים בסדר מסתובב - כל שלישייה מתחילה מהסמל הבא"
+        "sequence": [
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "square", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "diamond", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          null
+        ],
+        "options": [
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "square", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "star", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0}
+        ],
+        "correct": 3,
+        "hint": "הצורות הולכות וגדלות במספר הצלעות - מה בא אחרי יהלום?"
       },
       {
         "type": "matrix",
         "matrix": [
-          ["🔴", "🔵", "🔴"],
-          ["🔵", "🟢", "🔵"],
-          [null, "🔵", "🔴"]
+          [
+            {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+            {"type": "triangle", "fill": "none", "stroke": "#22c55e", "rotation": 0},
+            {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
+          ],
+          [
+            {"type": "triangle", "fill": "none", "stroke": "#22c55e", "rotation": 0},
+            {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+            {"type": "triangle", "fill": "none", "stroke": "#22c55e", "rotation": 0}
+          ],
+          [
+            null,
+            {"type": "triangle", "fill": "none", "stroke": "#22c55e", "rotation": 0},
+            {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
+          ]
         ],
         "missingRow": 2,
         "missingCol": 0,
-        "options": ["🔴", "🔵", "🟢", "🟡"],
-        "correct": 0,
-        "hint": "הטבלה סימטרית - הסתכלו על הפינות ועל הצדדים"
-      },
-      {
-        "type": "sequence",
-        "sequence": ["🔵", "🔴", "🔴", "🔵", "🔵", "🔴", "🔴", "🔴", "🔵", "🔵", "🔵", "🔴", "🔴", "🔴", "🔴", null],
-        "options": ["🔵", "🔴", "🟢", "🟡"],
-        "correct": 0,
-        "hint": "הקבוצות מתארכות: 1,2 - 2,3 - 3,4 - מה הבא?"
-      },
-      {
-        "type": "matrix",
-        "matrix": [
-          ["💚", "💛", "💙"],
-          ["💛", null, "💚"],
-          ["💙", "💚", "💛"]
+        "options": [
+          {"type": "triangle", "fill": "none", "stroke": "#22c55e", "rotation": 0},
+          {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0}
         ],
-        "missingRow": 1,
-        "missingCol": 1,
-        "options": ["💚", "💙", "💛", "❤️"],
         "correct": 1,
-        "hint": "זהו ריבוע לטיני - כל צבע מופיע פעם אחת בכל שורה, עמודה ואלכסון"
+        "hint": "משולשים מלאים וריקים מתחלפים כמו לוח שחמט"
       },
       {
         "type": "sequence",
-        "sequence": ["⬆️", "⬆️", "➡️", "➡️", "⬇️", "⬇️", "⬅️", "⬅️", "⬆️", "⬆️", "➡️", null],
-        "options": ["➡️", "⬆️", "⬇️", "⬅️"],
-        "correct": 0,
-        "hint": "החצים מסתובבים בכיוון השעון, כל כיוון מופיע פעמיים"
+        "sequence": [
+          {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "circle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "square", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          null
+        ],
+        "options": [
+          {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "circle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
+        ],
+        "correct": 1,
+        "hint": "ריבוע ועיגול מתחלפים, והצבע משתנה כל שני צעדים"
       },
       {
         "type": "matrix",
         "matrix": [
-          ["🔴", "🟡", "🔵"],
-          ["🟡", "🔵", null],
-          ["🔵", "🟣", "🟡"]
+          [
+            {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+            {"type": "diamond", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "circle", "fill": "#ec4899", "stroke": "#ec4899", "rotation": 0}
+          ],
+          [
+            {"type": "diamond", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "circle", "fill": "#ec4899", "stroke": "#ec4899", "rotation": 0},
+            {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0}
+          ],
+          [
+            {"type": "circle", "fill": "#ec4899", "stroke": "#ec4899", "rotation": 0},
+            {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+            null
+          ]
+        ],
+        "missingRow": 2,
+        "missingCol": 2,
+        "options": [
+          {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "circle", "fill": "#ec4899", "stroke": "#ec4899", "rotation": 0},
+          {"type": "diamond", "fill": "#ec4899", "stroke": "#ec4899", "rotation": 0},
+          {"type": "diamond", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0}
+        ],
+        "correct": 3,
+        "hint": "כל שורה היא הזזה של הקודמת - כל צורה וצבע מופיעים פעם אחת"
+      },
+      {
+        "type": "sequence",
+        "sequence": [
+          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0},
+          {"type": "diamond", "fill": "none", "stroke": "#8b5cf6", "rotation": 0},
+          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0},
+          {"type": "diamond", "fill": "none", "stroke": "#8b5cf6", "rotation": 0},
+          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0},
+          null
+        ],
+        "options": [
+          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0},
+          {"type": "diamond", "fill": "none", "stroke": "#8b5cf6", "rotation": 0},
+          {"type": "star", "fill": "none", "stroke": "#8b5cf6", "rotation": 0},
+          {"type": "diamond", "fill": "none", "stroke": "#ef4444", "rotation": 0}
+        ],
+        "correct": 1,
+        "hint": "יהלום מלא ויהלום ריק מתחלפים לסירוגין"
+      },
+      {
+        "type": "matrix",
+        "matrix": [
+          [
+            {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "circle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "circle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
+          ],
+          [
+            {"type": "circle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+            {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "circle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0}
+          ],
+          [
+            {"type": "circle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+            null,
+            {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0}
+          ]
+        ],
+        "missingRow": 2,
+        "missingCol": 1,
+        "options": [
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "circle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "circle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "circle", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0}
+        ],
+        "correct": 2,
+        "hint": "כל צבע מופיע פעם אחת בכל שורה ובכל עמודה - ריבוע לטיני"
+      },
+      {
+        "type": "sequence",
+        "sequence": [
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "circle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "circle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          null
+        ],
+        "options": [
+          {"type": "triangle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "circle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0}
+        ],
+        "correct": 3,
+        "hint": "משולש אדום ועיגול כחול מתחלפים - מה בא אחרי המשולש?"
+      },
+      {
+        "type": "matrix",
+        "matrix": [
+          [
+            {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+            {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "diamond", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0}
+          ],
+          [
+            {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "diamond", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
+          ],
+          [
+            {"type": "diamond", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+            null
+          ]
+        ],
+        "missingRow": 2,
+        "missingCol": 2,
+        "options": [
+          {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "diamond", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "circle", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0}
+        ],
+        "correct": 2,
+        "hint": "שלוש צורות שונות בשלושה צבעים - כל אחת מופיעה פעם בכל שורה ועמודה"
+      }
+    ],
+    [
+      {
+        "type": "matrix",
+        "matrix": [
+          [
+            {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "circle", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "circle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
+          ],
+          [
+            {"type": "square", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
+          ],
+          [
+            {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            null,
+            {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
+          ]
+        ],
+        "missingRow": 2,
+        "missingCol": 1,
+        "options": [
+          {"type": "triangle", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "triangle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "circle", "fill": "none", "stroke": "#3b82f6", "rotation": 0}
+        ],
+        "correct": 0,
+        "hint": "הצורה משתנה בכל שורה, והעמודה האמצעית תמיד ריקה (רק מתאר)"
+      },
+      {
+        "type": "sequence",
+        "sequence": [
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 90},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 180},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 270},
+          null
+        ],
+        "options": [
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 90},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 180},
+          {"type": "square", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0}
+        ],
+        "correct": 0,
+        "hint": "המשולש מסתובב 90 מעלות בכל צעד - אחרי 270 חוזר ל-0"
+      },
+      {
+        "type": "matrix",
+        "matrix": [
+          [
+            {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "square", "fill": "none", "stroke": "#ef4444", "rotation": 0},
+            {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0}
+          ],
+          [
+            {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "triangle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "circle", "fill": "none", "stroke": "#3b82f6", "rotation": 0}
+          ],
+          [
+            {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+            {"type": "circle", "fill": "none", "stroke": "#22c55e", "rotation": 0},
+            null
+          ]
+        ],
+        "missingRow": 2,
+        "missingCol": 2,
+        "options": [
+          {"type": "square", "fill": "none", "stroke": "#22c55e", "rotation": 0},
+          {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "triangle", "fill": "none", "stroke": "#22c55e", "rotation": 0},
+          {"type": "circle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
+        ],
+        "correct": 1,
+        "hint": "שני כללים: הצורה מתחלפת בכל שורה (ריבוע לטיני), והמילוי מתחלף - מלא, ריק, מלא"
+      },
+      {
+        "type": "sequence",
+        "sequence": [
+          {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "circle", "fill": "none", "stroke": "#ef4444", "rotation": 0},
+          {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          null
+        ],
+        "options": [
+          {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "circle", "fill": "none", "stroke": "#22c55e", "rotation": 0},
+          {"type": "triangle", "fill": "none", "stroke": "#22c55e", "rotation": 0},
+          {"type": "square", "fill": "none", "stroke": "#22c55e", "rotation": 0}
+        ],
+        "correct": 2,
+        "hint": "כל זוג הוא אותה צורה - פעם מלאה ופעם ריקה, והצורה משתנה בכל זוג"
+      },
+      {
+        "type": "matrix",
+        "matrix": [
+          [
+            {"type": "diamond", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+            {"type": "diamond", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+            {"type": "diamond", "fill": "none", "stroke": "#f59e0b", "rotation": 0}
+          ],
+          [
+            {"type": "diamond", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+            {"type": "diamond", "fill": "none", "stroke": "#f59e0b", "rotation": 0},
+            {"type": "diamond", "fill": "none", "stroke": "#f59e0b", "rotation": 0}
+          ],
+          [
+            {"type": "diamond", "fill": "none", "stroke": "#f59e0b", "rotation": 0},
+            {"type": "diamond", "fill": "none", "stroke": "#f59e0b", "rotation": 0},
+            null
+          ]
+        ],
+        "missingRow": 2,
+        "missingCol": 2,
+        "options": [
+          {"type": "diamond", "fill": "none", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "diamond", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "star", "fill": "none", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "diamond", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0}
+        ],
+        "correct": 1,
+        "hint": "ספרו את היהלומים המלאים בכל שורה - 2, 1, ? והדפוס ממשיך באלכסון"
+      },
+      {
+        "type": "sequence",
+        "sequence": [
+          {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "star", "fill": "none", "stroke": "#ec4899", "rotation": 0},
+          {"type": "star", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "star", "fill": "none", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "star", "fill": "#ec4899", "stroke": "#ec4899", "rotation": 0},
+          null
+        ],
+        "options": [
+          {"type": "star", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "star", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "diamond", "fill": "none", "stroke": "#3b82f6", "rotation": 0}
+        ],
+        "correct": 0,
+        "hint": "הכוכבים מתחלפים בין מלא וריק, והצבעים מסתובבים: כתום, ורוד, כחול"
+      },
+      {
+        "type": "matrix",
+        "matrix": [
+          [
+            {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "triangle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 90},
+            {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 180}
+          ],
+          [
+            {"type": "triangle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 90},
+            {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 180},
+            {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0}
+          ],
+          [
+            {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 180},
+            null,
+            {"type": "triangle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 90}
+          ]
+        ],
+        "missingRow": 2,
+        "missingCol": 1,
+        "options": [
+          {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "triangle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 180},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 90}
+        ],
+        "correct": 1,
+        "hint": "כל צבע מופיע עם סיבוב מסוים - אדום ב-0, כחול ב-90, ירוק ב-180"
+      },
+      {
+        "type": "sequence",
+        "sequence": [
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "circle", "fill": "none", "stroke": "#ef4444", "rotation": 0},
+          {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          null
+        ],
+        "options": [
+          {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "circle", "fill": "none", "stroke": "#ef4444", "rotation": 0},
+          {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "circle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0}
+        ],
+        "correct": 0,
+        "hint": "עיגול אדום וריבוע כחול מתחלפים, והמילוי מתחלף כל סיבוב: מלא, ריק, מלא..."
+      },
+      {
+        "type": "matrix",
+        "matrix": [
+          [
+            {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+            {"type": "circle", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+            {"type": "diamond", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0}
+          ],
+          [
+            {"type": "circle", "fill": "none", "stroke": "#8b5cf6", "rotation": 0},
+            {"type": "diamond", "fill": "none", "stroke": "#8b5cf6", "rotation": 0},
+            {"type": "star", "fill": "none", "stroke": "#8b5cf6", "rotation": 0}
+          ],
+          [
+            {"type": "diamond", "fill": "#ec4899", "stroke": "#ec4899", "rotation": 0},
+            null,
+            {"type": "circle", "fill": "#ec4899", "stroke": "#ec4899", "rotation": 0}
+          ]
+        ],
+        "missingRow": 2,
+        "missingCol": 1,
+        "options": [
+          {"type": "circle", "fill": "#ec4899", "stroke": "#ec4899", "rotation": 0},
+          {"type": "diamond", "fill": "none", "stroke": "#ec4899", "rotation": 0},
+          {"type": "star", "fill": "#ec4899", "stroke": "#ec4899", "rotation": 0},
+          {"type": "star", "fill": "none", "stroke": "#ec4899", "rotation": 0}
+        ],
+        "correct": 2,
+        "hint": "הצורות מתחלפות בכל שורה ועמודה. שורה 1 מלאה, שורה 2 ריקה, שורה 3 מלאה"
+      },
+      {
+        "type": "sequence",
+        "sequence": [
+          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0},
+          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 90},
+          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0},
+          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 90},
+          null
+        ],
+        "options": [
+          {"type": "diamond", "fill": "none", "stroke": "#8b5cf6", "rotation": 0},
+          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 90},
+          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 180},
+          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0}
+        ],
+        "correct": 3,
+        "hint": "היהלום מתחלף בין 0 מעלות ו-90 מעלות"
+      },
+      {
+        "type": "matrix",
+        "matrix": [
+          [
+            {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
+          ],
+          [
+            {"type": "triangle", "fill": "none", "stroke": "#22c55e", "rotation": 0},
+            {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 0}
+          ],
+          [
+            {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "triangle", "fill": "none", "stroke": "#22c55e", "rotation": 0},
+            null
+          ]
+        ],
+        "missingRow": 2,
+        "missingCol": 2,
+        "options": [
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "circle", "fill": "none", "stroke": "#ef4444", "rotation": 0}
+        ],
+        "correct": 3,
+        "hint": "הצורות מסתובבות בריבוע לטיני, והמילוי מתחלף באלכסון - מלא, ריק, מלא"
+      },
+      {
+        "type": "sequence",
+        "sequence": [
+          {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 90},
+          {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 180},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 90},
+          null
+        ],
+        "options": [
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 270},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 180},
+          {"type": "triangle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 180}
+        ],
+        "correct": 2,
+        "hint": "המשולש מסתובב 90 מעלות בכל צעד, ואחרי שלוש סיבובים הצבע משתנה"
+      },
+      {
+        "type": "matrix",
+        "matrix": [
+          [
+            {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+            {"type": "star", "fill": "none", "stroke": "#f59e0b", "rotation": 0},
+            {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0}
+          ],
+          [
+            {"type": "star", "fill": "none", "stroke": "#ec4899", "rotation": 0},
+            {"type": "star", "fill": "#ec4899", "stroke": "#ec4899", "rotation": 0},
+            {"type": "star", "fill": "none", "stroke": "#ec4899", "rotation": 0}
+          ],
+          [
+            {"type": "star", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+            null,
+            {"type": "star", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0}
+          ]
+        ],
+        "missingRow": 2,
+        "missingCol": 1,
+        "options": [
+          {"type": "star", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "star", "fill": "none", "stroke": "#ec4899", "rotation": 0},
+          {"type": "circle", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "star", "fill": "none", "stroke": "#3b82f6", "rotation": 0}
+        ],
+        "correct": 3,
+        "hint": "הצבע משתנה בכל שורה, והמילוי מתחלף: מלא-ריק-מלא בכל שורה"
+      },
+      {
+        "type": "sequence",
+        "sequence": [
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "square", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "triangle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "diamond", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "star", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          null
+        ],
+        "options": [
+          {"type": "star", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "diamond", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "circle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "circle", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0}
+        ],
+        "correct": 2,
+        "hint": "הצורות מתקדמות ברצף, והצבע משתנה כל שני צעדים: אדום, כחול, ירוק"
+      },
+      {
+        "type": "matrix",
+        "matrix": [
+          [
+            {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "square", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0}
+          ],
+          [
+            {"type": "triangle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+            null
+          ],
+          [
+            {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+            {"type": "circle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+            {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
+          ]
         ],
         "missingRow": 1,
         "missingCol": 2,
-        "options": ["🟣", "🔴", "🟡", "🔵"],
+        "options": [
+          {"type": "triangle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "circle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "diamond", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "square", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0}
+        ],
+        "correct": 1,
+        "hint": "כל שורה מכילה שלוש צורות שונות, וכל שורה בצבע אחר. הצורות זזות מעגלית"
+      }
+    ],
+    [
+      {
+        "type": "matrix",
+        "matrix": [
+          [
+            {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
+          ],
+          [
+            {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 90},
+            {"type": "triangle", "fill": "none", "stroke": "#22c55e", "rotation": 90},
+            {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0}
+          ],
+          [
+            {"type": "triangle", "fill": "none", "stroke": "#22c55e", "rotation": 180},
+            {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            null
+          ]
+        ],
+        "missingRow": 2,
+        "missingCol": 2,
+        "options": [
+          {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 180},
+          {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 180},
+          {"type": "circle", "fill": "none", "stroke": "#ef4444", "rotation": 0},
+          {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 180}
+        ],
         "correct": 0,
-        "hint": "הצבעים זזים ומתקדמים - עקבו אחרי השינוי בכל עמודה"
+        "hint": "שלושה כללים: הצורה בריבוע לטיני, המילוי מתחלף (מלא-ריק-מלא באלכסון), והסיבוב גדל ב-90 בכל שורה"
+      },
+      {
+        "type": "sequence",
+        "sequence": [
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "triangle", "fill": "none", "stroke": "#3b82f6", "rotation": 90},
+          {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 180},
+          {"type": "triangle", "fill": "none", "stroke": "#f59e0b", "rotation": 270},
+          null
+        ],
+        "options": [
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "triangle", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0},
+          {"type": "triangle", "fill": "none", "stroke": "#ef4444", "rotation": 0},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 90}
+        ],
+        "correct": 1,
+        "hint": "שלושה דפוסים בו-זמנית: הסיבוב מתקדם ב-90, המילוי מתחלף מלא-ריק, והצבע משתנה"
+      },
+      {
+        "type": "matrix",
+        "matrix": [
+          [
+            {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "circle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "circle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
+          ],
+          [
+            {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+            {"type": "square", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0}
+          ],
+          [
+            {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+            null,
+            {"type": "triangle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0}
+          ]
+        ],
+        "missingRow": 2,
+        "missingCol": 1,
+        "options": [
+          {"type": "triangle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
+        ],
+        "correct": 1,
+        "hint": "הצורה זהה בכל שורה, והצבעים זזים - כל שורה מזיזה את הצבעים מקום אחד שמאלה"
+      },
+      {
+        "type": "sequence",
+        "sequence": [
+          {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "diamond", "fill": "none", "stroke": "#8b5cf6", "rotation": 0},
+          {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 90},
+          {"type": "diamond", "fill": "none", "stroke": "#8b5cf6", "rotation": 90},
+          {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 180},
+          null
+        ],
+        "options": [
+          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 180},
+          {"type": "star", "fill": "none", "stroke": "#f59e0b", "rotation": 180},
+          {"type": "diamond", "fill": "none", "stroke": "#8b5cf6", "rotation": 180},
+          {"type": "diamond", "fill": "none", "stroke": "#8b5cf6", "rotation": 0}
+        ],
+        "correct": 2,
+        "hint": "כוכב מלא ויהלום ריק מתחלפים, ושניהם מסתובבים 90 מעלות כל זוג"
+      },
+      {
+        "type": "matrix",
+        "matrix": [
+          [
+            {"type": "diamond", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "diamond", "fill": "none", "stroke": "#ef4444", "rotation": 90},
+            {"type": "diamond", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 180}
+          ],
+          [
+            {"type": "diamond", "fill": "none", "stroke": "#3b82f6", "rotation": 90},
+            {"type": "diamond", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 180},
+            {"type": "diamond", "fill": "none", "stroke": "#3b82f6", "rotation": 270}
+          ],
+          [
+            {"type": "diamond", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 180},
+            {"type": "diamond", "fill": "none", "stroke": "#22c55e", "rotation": 270},
+            null
+          ]
+        ],
+        "missingRow": 2,
+        "missingCol": 2,
+        "options": [
+          {"type": "diamond", "fill": "none", "stroke": "#22c55e", "rotation": 0},
+          {"type": "diamond", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "star", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "diamond", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
+        ],
+        "correct": 3,
+        "hint": "שלושה כללים: הצבע משתנה בכל שורה, הסיבוב מתקדם ב-90 בכל עמודה, והמילוי מתחלף"
+      },
+      {
+        "type": "sequence",
+        "sequence": [
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "square", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "circle", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "circle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "circle", "fill": "none", "stroke": "#f59e0b", "rotation": 0},
+          null
+        ],
+        "options": [
+          {"type": "square", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "circle", "fill": "none", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "diamond", "fill": "none", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "square", "fill": "none", "stroke": "#f59e0b", "rotation": 0}
+        ],
+        "correct": 3,
+        "hint": "שלושה דפוסים: עיגול-ריבוע מתחלפים, הצבע משתנה כל זוג, והמילוי מתחלף כל זוג"
+      },
+      {
+        "type": "matrix",
+        "matrix": [
+          [
+            {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "circle", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
+          ],
+          [
+            {"type": "circle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+            {"type": "square", "fill": "none", "stroke": "#22c55e", "rotation": 0},
+            {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0}
+          ],
+          [
+            {"type": "square", "fill": "none", "stroke": "#22c55e", "rotation": 0},
+            {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            null
+          ]
+        ],
+        "missingRow": 2,
+        "missingCol": 2,
+        "options": [
+          {"type": "circle", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "circle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "triangle", "fill": "none", "stroke": "#ef4444", "rotation": 0}
+        ],
+        "correct": 1,
+        "hint": "צורה בריבוע לטיני, צבע בריבוע לטיני, ומילוי: באלכסון הראשי תמיד מלא ובשאר מתחלף"
+      },
+      {
+        "type": "sequence",
+        "sequence": [
+          {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 90},
+          {"type": "square", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 180},
+          {"type": "square", "fill": "none", "stroke": "#ef4444", "rotation": 270},
+          {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          null
+        ],
+        "options": [
+          {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 90},
+          {"type": "square", "fill": "none", "stroke": "#22c55e", "rotation": 90},
+          {"type": "square", "fill": "none", "stroke": "#22c55e", "rotation": 0},
+          {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 90}
+        ],
+        "correct": 1,
+        "hint": "שלושה כללים בו-זמנית: הסיבוב מתקדם ב-90, המילוי מתחלף, והצבע משתנה כל שני צעדים"
+      },
+      {
+        "type": "matrix",
+        "matrix": [
+          [
+            {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+            {"type": "diamond", "fill": "none", "stroke": "#8b5cf6", "rotation": 0},
+            {"type": "circle", "fill": "#ec4899", "stroke": "#ec4899", "rotation": 0}
+          ],
+          [
+            {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 90},
+            {"type": "circle", "fill": "none", "stroke": "#ec4899", "rotation": 0},
+            {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0}
+          ],
+          [
+            {"type": "circle", "fill": "none", "stroke": "#ec4899", "rotation": 0},
+            {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+            null
+          ]
+        ],
+        "missingRow": 2,
+        "missingCol": 2,
+        "options": [
+          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0},
+          {"type": "diamond", "fill": "none", "stroke": "#8b5cf6", "rotation": 180},
+          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 180},
+          {"type": "star", "fill": "none", "stroke": "#f59e0b", "rotation": 0}
+        ],
+        "correct": 2,
+        "hint": "צורה וצבע בריבוע לטיני. הסיבוב גדל ב-90 באלכסון, והמילוי מתחלף"
+      },
+      {
+        "type": "sequence",
+        "sequence": [
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "triangle", "fill": "none", "stroke": "#ef4444", "rotation": 0},
+          {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 90},
+          {"type": "diamond", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "diamond", "fill": "none", "stroke": "#22c55e", "rotation": 90},
+          {"type": "circle", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+          null
+        ],
+        "options": [
+          {"type": "circle", "fill": "none", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "circle", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 90},
+          {"type": "star", "fill": "none", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "diamond", "fill": "none", "stroke": "#f59e0b", "rotation": 0}
+        ],
+        "correct": 0,
+        "hint": "כל זוג: צורה מלאה ואז ריקה. הצורה והצבע משתנים בכל זוג. הסיבוב מוסיף 90 לאיבר השני"
+      },
+      {
+        "type": "matrix",
+        "matrix": [
+          [
+            {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "square", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0}
+          ],
+          [
+            {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 90},
+            {"type": "triangle", "fill": "none", "stroke": "#3b82f6", "rotation": 90},
+            {"type": "circle", "fill": "none", "stroke": "#3b82f6", "rotation": 0}
+          ],
+          [
+            null,
+            {"type": "circle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+            {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 180}
+          ]
+        ],
+        "missingRow": 2,
+        "missingCol": 0,
+        "options": [
+          {"type": "circle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "triangle", "fill": "none", "stroke": "#22c55e", "rotation": 180},
+          {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 180},
+          {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 180}
+        ],
+        "correct": 2,
+        "hint": "צורה בריבוע לטיני, צבע לפי שורה, מילוי: מלא-ריק-מלא לפי שורה, וסיבוב גדל ב-90 כל שורה"
+      },
+      {
+        "type": "sequence",
+        "sequence": [
+          {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "circle", "fill": "none", "stroke": "#8b5cf6", "rotation": 0},
+          {"type": "diamond", "fill": "#ec4899", "stroke": "#ec4899", "rotation": 0},
+          {"type": "star", "fill": "none", "stroke": "#f59e0b", "rotation": 90},
+          {"type": "circle", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0},
+          {"type": "diamond", "fill": "none", "stroke": "#ec4899", "rotation": 90},
+          null
+        ],
+        "options": [
+          {"type": "star", "fill": "none", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "circle", "fill": "none", "stroke": "#f59e0b", "rotation": 180},
+          {"type": "diamond", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 180},
+          {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 180}
+        ],
+        "correct": 3,
+        "hint": "שלוש צורות חוזרות, המילוי מתהפך בכל מחזור, והסיבוב מוסיף 90 כל מחזור"
+      },
+      {
+        "type": "matrix",
+        "matrix": [
+          [
+            {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "triangle", "fill": "none", "stroke": "#3b82f6", "rotation": 90},
+            {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 180}
+          ],
+          [
+            {"type": "triangle", "fill": "none", "stroke": "#22c55e", "rotation": 90},
+            {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 180},
+            {"type": "triangle", "fill": "none", "stroke": "#3b82f6", "rotation": 270}
+          ],
+          [
+            {"type": "triangle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 180},
+            null,
+            {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0}
+          ]
+        ],
+        "missingRow": 2,
+        "missingCol": 1,
+        "options": [
+          {"type": "triangle", "fill": "none", "stroke": "#22c55e", "rotation": 270},
+          {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 270},
+          {"type": "triangle", "fill": "none", "stroke": "#ef4444", "rotation": 270},
+          {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
+        ],
+        "correct": 0,
+        "hint": "שלושה כללים: צבע בריבוע לטיני, מילוי מתחלף בכל תא, וסיבוב מתקדם ב-90 בכל עמודה"
+      },
+      {
+        "type": "sequence",
+        "sequence": [
+          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0},
+          {"type": "circle", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0},
+          {"type": "diamond", "fill": "none", "stroke": "#ec4899", "rotation": 90},
+          {"type": "circle", "fill": "none", "stroke": "#ec4899", "rotation": 0},
+          {"type": "diamond", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 180},
+          null
+        ],
+        "options": [
+          {"type": "diamond", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "circle", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "circle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "star", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0}
+        ],
+        "correct": 2,
+        "hint": "כל זוג: יהלום ועיגול. הצבע משתנה כל זוג, המילוי מתחלף (מלא-ריק-מלא), והיהלום מסתובב 90"
+      },
+      {
+        "type": "matrix",
+        "matrix": [
+          [
+            {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+            {"type": "circle", "fill": "none", "stroke": "#ef4444", "rotation": 0},
+            {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0}
+          ],
+          [
+            {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+            {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 90},
+            {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0}
+          ],
+          [
+            {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 180},
+            {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
+            null
+          ]
+        ],
+        "missingRow": 2,
+        "missingCol": 2,
+        "options": [
+          {"type": "circle", "fill": "none", "stroke": "#ef4444", "rotation": 0},
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "star", "fill": "none", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 180}
+        ],
+        "correct": 1,
+        "hint": "צורה וצבע בריבוע לטיני. מילוי: באלכסון מלא ומחוצה לו מתחלף. ריבועים גם מסתובבים ב-90 כל שורה"
       }
     ]
   ]
