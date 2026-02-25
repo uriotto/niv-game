@@ -11,19 +11,19 @@ export default function WordRelations({ question, onAnswer, showFeedback }) {
       </div>
 
       {/* Word pair on sign */}
-      <div className="bg-emerald-900/60 border-2 border-emerald-500/40 rounded-2xl p-6 text-center">
-        <p className="text-sm text-emerald-300 mb-2">מצאי את הזוג עם אותו יחס:</p>
+      <div className="glass-card rounded-2xl p-6 text-center" style={{ borderColor: 'rgba(16, 185, 129, 0.2)' }}>
+        <p className="text-sm text-emerald-400/80 mb-2">מצאי את הזוג עם אותו יחס:</p>
         <div className="flex items-center justify-center gap-3 text-2xl">
-          <span className="bg-emerald-700/50 px-4 py-2 rounded-xl text-white font-bold">
+          <span className="bg-emerald-500/15 px-4 py-2 rounded-xl text-white font-bold border border-emerald-500/20">
             {question.pair[0]}
           </span>
           <span className="text-emerald-400 text-lg">:</span>
-          <span className="bg-emerald-700/50 px-4 py-2 rounded-xl text-white font-bold">
+          <span className="bg-emerald-500/15 px-4 py-2 rounded-xl text-white font-bold border border-emerald-500/20">
             {question.pair[1]}
           </span>
         </div>
         {question.relation && (
-          <p className="text-xs text-emerald-400/60 mt-2">({question.relation})</p>
+          <p className="text-xs text-emerald-400/50 mt-2">({question.relation})</p>
         )}
       </div>
 
@@ -39,15 +39,15 @@ export default function WordRelations({ question, onAnswer, showFeedback }) {
             className={`
               p-4 rounded-2xl transition-all cursor-pointer
               ${showFeedback === 'correct' && i === question.correct
-                ? 'bg-green-600 text-white border-2 border-green-400'
-                : 'bg-emerald-800/40 hover:bg-emerald-700/50 text-white border-2 border-emerald-500/30 hover:border-emerald-400/50'
+                ? 'bg-emerald-600/80 text-white border-2 border-emerald-400/60'
+                : 'glass-card hover:border-emerald-400/30 text-white'
               }
               disabled:cursor-default
             `}
           >
             <div className="flex items-center justify-center gap-2 text-lg">
               <span>{pair[0]}</span>
-              <span className="text-emerald-400 text-sm">:</span>
+              <span className="text-emerald-400/60 text-sm">:</span>
               <span>{pair[1]}</span>
             </div>
           </motion.button>

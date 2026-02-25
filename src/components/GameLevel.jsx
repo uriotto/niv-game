@@ -45,22 +45,22 @@ export default function GameLevel({ kingdom, levelIndex, questions, levelName, o
       : null
 
   return (
-    <div className="min-h-screen p-4 flex flex-col">
+    <div className="min-h-screen p-4 flex flex-col relative z-10">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
         <motion.button
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
           onClick={onBack}
-          className="text-white/70 hover:text-white text-sm cursor-pointer"
+          className="text-[#8080a0] hover:text-white text-sm cursor-pointer transition-colors"
         >
-          → חזרה
+          ← חזרה
         </motion.button>
         <div className="text-center">
           <h2 className="text-lg font-bold text-white">{kingdom.icon} {kingdom.name}</h2>
-          <p className="text-sm text-white/60">{levelName}</p>
+          <p className="text-sm text-[#8080a0]">{levelName}</p>
         </div>
-        <div className="text-white/70 text-sm">
+        <div className="glass-card rounded-full px-3 py-1 text-sm text-[#c0b89c]">
           {currentIndex + 1}/{totalQuestions}
         </div>
       </div>

@@ -1,97 +1,116 @@
 import { motion } from 'framer-motion'
 
+const stagger = {
+  hidden: {},
+  show: { transition: { staggerChildren: 0.15, delayChildren: 0.3 } },
+}
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
+}
+
 export default function WelcomeScreen({ onStart, totalStars }) {
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-6 relative overflow-hidden">
-      {/* Floating stars background */}
-      {Array.from({ length: 12 }).map((_, i) => (
-        <motion.div
-          key={i}
-          className="absolute text-amber-300/20 text-2xl pointer-events-none"
-          style={{
-            left: `${Math.random() * 100}%`,
-            top: `${Math.random() * 100}%`,
-          }}
-          animate={{
-            y: [0, -20, 0],
-            opacity: [0.2, 0.5, 0.2],
-            rotate: [0, 180, 360],
-          }}
-          transition={{
-            duration: 3 + Math.random() * 4,
-            repeat: Infinity,
-            delay: Math.random() * 3,
-          }}
-        >
-          ✨
-        </motion.div>
-      ))}
+    <motion.div
+      variants={stagger}
+      initial="hidden"
+      animate="show"
+      className="min-h-screen flex flex-col items-center justify-center p-6 relative z-10"
+    >
+      {/* Decorative orbs */}
+      <div className="absolute top-20 right-10 w-64 h-64 bg-purple-600/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-20 left-10 w-48 h-48 bg-amber-600/10 rounded-full blur-3xl pointer-events-none" />
 
-      {/* Magic book */}
+      {/* Magic book with glow */}
       <motion.div
-        initial={{ scale: 0, rotate: -20 }}
-        animate={{ scale: 1, rotate: 0 }}
-        transition={{ type: 'spring', damping: 10, delay: 0.2 }}
-        className="text-8xl mb-6 animate-float"
+        variants={fadeUp}
+        className="relative mb-8"
       >
-        📖
+        <div className="absolute inset-0 w-40 h-40 -translate-x-4 -translate-y-4 bg-amber-500/20 rounded-full blur-2xl" />
+        <motion.div
+          animate={{ y: [0, -8, 0], rotate: [0, 2, -2, 0] }}
+          transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
+          className="relative"
+        >
+          <img src={`${import.meta.env.BASE_URL}images/magic-book.jpg`} alt="ספר קסום" className="w-36 h-36 md:w-44 md:h-44 object-contain drop-shadow-2xl" />
+        </motion.div>
       </motion.div>
 
       {/* Title */}
       <motion.h1
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5 }}
-        className="text-5xl font-bold text-amber-300 text-shadow-glow mb-2 text-center"
+        variants={fadeUp}
+        className="font-display text-5xl md:text-6xl text-[#f0c850] text-shadow-glow mb-3 text-center leading-tight"
       >
         ניב והספר הקסום
       </motion.h1>
 
-      <motion.p
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.7 }}
-        className="text-white/60 text-lg mb-8 text-center max-w-md"
+      {/* Decorative line */}
+      <motion.div
+        variants={fadeUp}
+        className="flex items-center gap-3 mb-6"
       >
-        מסע קסום דרך 5 ממלכות מלאות חידות, מילים, מספרים וצורות!
+        <div className="h-px w-16 bg-gradient-to-l from-amber-500/50 to-transparent" />
+        <span className="text-amber-400/60 text-sm">✦</span>
+        <div className="h-px w-16 bg-gradient-to-r from-amber-500/50 to-transparent" />
+      </motion.div>
+
+      <motion.p
+        variants={fadeUp}
+        className="text-[#a0a0b8] text-lg mb-10 text-center max-w-md leading-relaxed"
+      >
+        מסע קסום דרך חמש ממלכות
+        <br />
+        מלאות חידות, מילים, מספרים וצורות
       </motion.p>
 
-      {/* Character */}
+      {/* Character card */}
       <motion.div
-        initial={{ opacity: 0, scale: 0.5 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.9 }}
-        className="flex flex-col items-center mb-8"
+        variants={fadeUp}
+        className="glass-card-warm rounded-2xl px-6 py-4 flex items-center gap-4 mb-8"
       >
-        <span className="text-6xl mb-2">🧙‍♀️</span>
-        <p className="text-amber-200 text-sm">ניב הקוסמת מוכנה להרפתקה!</p>
+        <motion.img
+          src={`${import.meta.env.BASE_URL}images/niv-wizard.png`}
+          alt="ניב הקוסמת"
+          className="w-16 h-16 md:w-20 md:h-20 object-contain rounded-xl"
+          animate={{ rotate: [0, -3, 3, 0] }}
+          transition={{ duration: 3, repeat: Infinity }}
+        />
+        <div>
+          <p className="font-display text-[#f0c850] text-lg">ניב הקוסמת</p>
+          <p className="text-[#a0a0b8] text-sm">מוכנה להרפתקה!</p>
+        </div>
       </motion.div>
 
       {/* Stars counter */}
       {totalStars > 0 && (
         <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1.1 }}
-          className="bg-amber-500/10 border border-amber-500/20 rounded-xl px-4 py-2 mb-6"
+          variants={fadeUp}
+          className="glass-card rounded-xl px-5 py-2.5 mb-8 flex items-center gap-2"
         >
-          <span className="text-star-gold">★</span>
-          <span className="text-amber-200 mr-1">{totalStars} כוכבים נאספו</span>
+          <span className="text-star-gold text-lg">★</span>
+          <span className="text-[#c0b89c]">{totalStars} כוכבים נאספו</span>
         </motion.div>
       )}
 
       {/* Start button */}
       <motion.button
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.3 }}
-        whileHover={{ scale: 1.08, boxShadow: '0 0 30px rgba(251, 191, 36, 0.4)' }}
-        whileTap={{ scale: 0.95 }}
+        variants={fadeUp}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.97 }}
         onClick={onStart}
-        className="bg-gradient-to-l from-amber-600 to-amber-500 hover:from-amber-500 hover:to-amber-400 text-white text-xl font-bold px-10 py-4 rounded-2xl shadow-lg shadow-amber-500/25 transition-all cursor-pointer"
+        className="btn-magic text-xl px-12 py-4"
       >
-        ✨ יאללה להרפתקה!
+        יאללה להרפתקה ✨
       </motion.button>
-    </div>
+
+      {/* Bottom hint */}
+      <motion.p
+        variants={fadeUp}
+        className="text-[#50506a] text-xs mt-8"
+      >
+        הכנה למבחן מחוננים ותכנית YUNI
+      </motion.p>
+    </motion.div>
   )
 }

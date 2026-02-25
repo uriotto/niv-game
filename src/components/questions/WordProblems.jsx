@@ -13,9 +13,15 @@ export default function WordProblems({ question, onAnswer, showFeedback }) {
       </motion.div>
 
       {/* Speech bubble with problem */}
-      <div className="bg-orange-900/50 border border-orange-500/30 rounded-2xl p-6 max-w-lg relative">
+      <div className="glass-card rounded-2xl p-6 max-w-lg relative" style={{ borderColor: 'rgba(249, 115, 22, 0.2)' }}>
         {/* Speech bubble tail */}
-        <div className="absolute -top-3 right-10 w-6 h-6 bg-orange-900/50 border-r border-t border-orange-500/30 rotate-[-45deg]" />
+        <div className="absolute -top-3 right-10 w-6 h-6 rotate-[-45deg]"
+          style={{
+            background: 'linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02))',
+            borderRight: '1px solid rgba(249, 115, 22, 0.2)',
+            borderTop: '1px solid rgba(249, 115, 22, 0.2)',
+          }}
+        />
 
         <p className="text-lg text-white leading-relaxed text-center">
           {question.text}
@@ -40,8 +46,8 @@ export default function WordProblems({ question, onAnswer, showFeedback }) {
             className={`
               p-4 rounded-2xl text-xl font-bold transition-all cursor-pointer
               ${showFeedback === 'correct' && i === question.correct
-                ? 'bg-green-600 text-white border-2 border-green-400'
-                : 'bg-orange-800/40 hover:bg-orange-700/50 text-white border-2 border-orange-500/30 hover:border-orange-400/50'
+                ? 'bg-emerald-600/80 text-white border-2 border-emerald-400/60'
+                : 'glass-card hover:border-orange-400/30 text-white'
               }
               disabled:cursor-default
             `}

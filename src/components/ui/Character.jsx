@@ -10,6 +10,7 @@ const expressions = {
 
 export default function Character({ mood = 'idle', message }) {
   const { emoji } = expressions[mood] || expressions.idle
+  const showAvatar = mood === 'idle'
 
   return (
     <motion.div
@@ -17,18 +18,28 @@ export default function Character({ mood = 'idle', message }) {
       animate={mood === 'correct' ? { y: [0, -10, 0] } : {}}
       transition={{ duration: 0.5 }}
     >
-      <motion.span
-        className="text-4xl"
-        animate={mood === 'celebration' ? { rotate: [0, -10, 10, 0], scale: [1, 1.2, 1] } : {}}
-        transition={{ duration: 0.5 }}
-      >
-        {emoji}
-      </motion.span>
+      {showAvatar ? (
+        <motion.img
+          src={`${import.meta.env.BASE_URL}images/niv-wizard.png`}
+          alt="ניב"
+          className="w-12 h-12 object-contain drop-shadow-lg"
+          animate={{ y: [0, -3, 0] }}
+          transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
+        />
+      ) : (
+        <motion.span
+          className="text-4xl"
+          animate={mood === 'celebration' ? { rotate: [0, -10, 10, 0], scale: [1, 1.2, 1] } : {}}
+          transition={{ duration: 0.5 }}
+        >
+          {emoji}
+        </motion.span>
+      )}
       {message && (
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
-          className="bg-white/10 backdrop-blur-sm rounded-xl px-3 py-1 text-sm text-amber-200 max-w-48 text-center"
+          className="glass-card rounded-xl px-3 py-1.5 text-sm text-[#f0c850] max-w-48 text-center"
         >
           {message}
         </motion.div>

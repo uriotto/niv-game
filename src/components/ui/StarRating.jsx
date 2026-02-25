@@ -15,7 +15,7 @@ export default function StarRating({ results, total }) {
             initial={isDone ? { scale: 0 } : {}}
             animate={isDone ? { scale: 1 } : {}}
             className={`text-lg ${
-              isGold ? 'text-star-gold' : isSilver ? 'text-star-silver' : 'text-gray-600'
+              isGold ? 'text-star-gold' : isSilver ? 'text-star-silver' : 'text-[#25252f]'
             }`}
           >
             {isDone ? (isGold ? '★' : isSilver ? '★' : '☆') : '☆'}

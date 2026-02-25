@@ -40,19 +40,19 @@ function PatternShape({ shape, size = 40, color = '#fff' }) {
 
 function MatrixGrid({ matrix, missingRow, missingCol }) {
   return (
-    <div className="grid grid-cols-3 gap-2 bg-pink-900/30 border border-pink-500/20 rounded-xl p-3">
+    <div className="grid grid-cols-3 gap-2 glass-card rounded-xl p-3" style={{ borderColor: 'rgba(236, 72, 153, 0.15)' }}>
       {matrix.map((row, r) =>
         row.map((cell, c) => (
           <div
             key={`${r}-${c}`}
             className={`w-14 h-14 flex items-center justify-center rounded-lg ${
               r === missingRow && c === missingCol
-                ? 'bg-amber-500/20 border-2 border-amber-400 border-dashed'
-                : 'bg-pink-800/30 border border-pink-500/20'
+                ? 'bg-[#f0c850]/15 border-2 border-[#f0c850]/50 border-dashed'
+                : 'bg-white/[0.03] border border-white/[0.06]'
             }`}
           >
             {r === missingRow && c === missingCol ? (
-              <span className="text-amber-400 text-xl">?</span>
+              <span className="text-[#f0c850] text-xl">?</span>
             ) : (
               <PatternShape shape={cell} />
             )}
@@ -65,21 +65,21 @@ function MatrixGrid({ matrix, missingRow, missingCol }) {
 
 function SequenceRow({ sequence }) {
   return (
-    <div className="flex gap-2 items-center justify-center bg-pink-900/30 border border-pink-500/20 rounded-xl p-3">
+    <div className="flex gap-2 items-center justify-center glass-card rounded-xl p-3" style={{ borderColor: 'rgba(236, 72, 153, 0.15)' }}>
       {sequence.map((item, i) => (
         <div key={i} className="flex items-center gap-2">
           <div className={`w-14 h-14 flex items-center justify-center rounded-lg ${
             item === null
-              ? 'bg-amber-500/20 border-2 border-amber-400 border-dashed'
-              : 'bg-pink-800/30 border border-pink-500/20'
+              ? 'bg-[#f0c850]/15 border-2 border-[#f0c850]/50 border-dashed'
+              : 'bg-white/[0.03] border border-white/[0.06]'
           }`}>
             {item === null ? (
-              <span className="text-amber-400 text-xl">?</span>
+              <span className="text-[#f0c850] text-xl">?</span>
             ) : (
               <PatternShape shape={item} />
             )}
           </div>
-          {i < sequence.length - 1 && <span className="text-pink-400">→</span>}
+          {i < sequence.length - 1 && <span className="text-pink-400/60">→</span>}
         </div>
       ))}
     </div>
@@ -96,7 +96,7 @@ export default function PatternRecognition({ question, onAnswer, showFeedback })
         <span className="animate-float" style={{ animationDelay: '0.6s' }}>🗝️</span>
       </div>
 
-      <p className="text-sm text-pink-300 text-center">מצאי את הצורה שמשלימה את הדפוס:</p>
+      <p className="text-sm text-pink-400/80 text-center">מצאי את הצורה שמשלימה את הדפוס:</p>
 
       {/* Pattern display */}
       {question.type === 'matrix' ? (
@@ -121,8 +121,8 @@ export default function PatternRecognition({ question, onAnswer, showFeedback })
             className={`
               p-4 rounded-2xl flex items-center justify-center transition-all cursor-pointer min-h-16
               ${showFeedback === 'correct' && i === question.correct
-                ? 'bg-green-600 border-2 border-green-400'
-                : 'bg-pink-800/40 hover:bg-pink-700/50 border-2 border-pink-500/30 hover:border-pink-400/50'
+                ? 'bg-emerald-600/80 border-2 border-emerald-400/60'
+                : 'glass-card hover:border-pink-400/30'
               }
               disabled:cursor-default
             `}

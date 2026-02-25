@@ -13,20 +13,20 @@ function ShapeDisplay({ shape }) {
           strokeWidth="3"
         />
         {/* Top */}
-        <text x="100" y="45" textAnchor="middle" fill={missingIndex === 0 ? '#fbbf24' : 'white'} fontSize="24" fontWeight="bold">
+        <text x="100" y="45" textAnchor="middle" fill={missingIndex === 0 ? '#f0c850' : 'white'} fontSize="24" fontWeight="bold">
           {missingIndex === 0 ? '?' : numbers[0]}
         </text>
         {/* Bottom left */}
-        <text x="45" y="155" textAnchor="middle" fill={missingIndex === 1 ? '#fbbf24' : 'white'} fontSize="24" fontWeight="bold">
+        <text x="45" y="155" textAnchor="middle" fill={missingIndex === 1 ? '#f0c850' : 'white'} fontSize="24" fontWeight="bold">
           {missingIndex === 1 ? '?' : numbers[1]}
         </text>
         {/* Bottom right */}
-        <text x="155" y="155" textAnchor="middle" fill={missingIndex === 2 ? '#fbbf24' : 'white'} fontSize="24" fontWeight="bold">
+        <text x="155" y="155" textAnchor="middle" fill={missingIndex === 2 ? '#f0c850' : 'white'} fontSize="24" fontWeight="bold">
           {missingIndex === 2 ? '?' : numbers[2]}
         </text>
         {/* Center */}
         {numbers[3] !== undefined && (
-          <text x="100" y="120" textAnchor="middle" fill={missingIndex === 3 ? '#fbbf24' : '#93c5fd'} fontSize="20">
+          <text x="100" y="120" textAnchor="middle" fill={missingIndex === 3 ? '#f0c850' : '#93c5fd'} fontSize="20">
             {missingIndex === 3 ? '?' : numbers[3]}
           </text>
         )}
@@ -41,19 +41,19 @@ function ShapeDisplay({ shape }) {
         <line x1="100" y1="15" x2="100" y2="185" stroke="#60a5fa" strokeWidth="1.5" opacity="0.5" />
         <line x1="15" y1="100" x2="185" y2="100" stroke="#60a5fa" strokeWidth="1.5" opacity="0.5" />
         {/* Top-right */}
-        <text x="140" y="65" textAnchor="middle" fill={missingIndex === 0 ? '#fbbf24' : 'white'} fontSize="22" fontWeight="bold">
+        <text x="140" y="65" textAnchor="middle" fill={missingIndex === 0 ? '#f0c850' : 'white'} fontSize="22" fontWeight="bold">
           {missingIndex === 0 ? '?' : numbers[0]}
         </text>
         {/* Top-left */}
-        <text x="60" y="65" textAnchor="middle" fill={missingIndex === 1 ? '#fbbf24' : 'white'} fontSize="22" fontWeight="bold">
+        <text x="60" y="65" textAnchor="middle" fill={missingIndex === 1 ? '#f0c850' : 'white'} fontSize="22" fontWeight="bold">
           {missingIndex === 1 ? '?' : numbers[1]}
         </text>
         {/* Bottom-left */}
-        <text x="60" y="145" textAnchor="middle" fill={missingIndex === 2 ? '#fbbf24' : 'white'} fontSize="22" fontWeight="bold">
+        <text x="60" y="145" textAnchor="middle" fill={missingIndex === 2 ? '#f0c850' : 'white'} fontSize="22" fontWeight="bold">
           {missingIndex === 2 ? '?' : numbers[2]}
         </text>
         {/* Bottom-right */}
-        <text x="140" y="145" textAnchor="middle" fill={missingIndex === 3 ? '#fbbf24' : 'white'} fontSize="22" fontWeight="bold">
+        <text x="140" y="145" textAnchor="middle" fill={missingIndex === 3 ? '#f0c850' : 'white'} fontSize="22" fontWeight="bold">
           {missingIndex === 3 ? '?' : numbers[3]}
         </text>
       </svg>
@@ -67,19 +67,19 @@ function ShapeDisplay({ shape }) {
       <line x1="100" y1="15" x2="100" y2="185" stroke="#60a5fa" strokeWidth="1.5" opacity="0.5" />
       <line x1="15" y1="100" x2="185" y2="100" stroke="#60a5fa" strokeWidth="1.5" opacity="0.5" />
       {/* Top-right */}
-      <text x="145" y="65" textAnchor="middle" fill={missingIndex === 0 ? '#fbbf24' : 'white'} fontSize="24" fontWeight="bold">
+      <text x="145" y="65" textAnchor="middle" fill={missingIndex === 0 ? '#f0c850' : 'white'} fontSize="24" fontWeight="bold">
         {missingIndex === 0 ? '?' : numbers[0]}
       </text>
       {/* Top-left */}
-      <text x="55" y="65" textAnchor="middle" fill={missingIndex === 1 ? '#fbbf24' : 'white'} fontSize="24" fontWeight="bold">
+      <text x="55" y="65" textAnchor="middle" fill={missingIndex === 1 ? '#f0c850' : 'white'} fontSize="24" fontWeight="bold">
         {missingIndex === 1 ? '?' : numbers[1]}
       </text>
       {/* Bottom-left */}
-      <text x="55" y="145" textAnchor="middle" fill={missingIndex === 2 ? '#fbbf24' : 'white'} fontSize="24" fontWeight="bold">
+      <text x="55" y="145" textAnchor="middle" fill={missingIndex === 2 ? '#f0c850' : 'white'} fontSize="24" fontWeight="bold">
         {missingIndex === 2 ? '?' : numbers[2]}
       </text>
       {/* Bottom-right */}
-      <text x="145" y="145" textAnchor="middle" fill={missingIndex === 3 ? '#fbbf24' : 'white'} fontSize="24" fontWeight="bold">
+      <text x="145" y="145" textAnchor="middle" fill={missingIndex === 3 ? '#f0c850' : 'white'} fontSize="24" fontWeight="bold">
         {missingIndex === 3 ? '?' : numbers[3]}
       </text>
     </svg>
@@ -97,11 +97,11 @@ export default function NumbersInShapes({ question, onAnswer, showFeedback }) {
       </div>
 
       {/* Shape with numbers */}
-      <div className="bg-blue-900/50 border border-blue-500/30 rounded-2xl p-6">
-        <p className="text-sm text-blue-300 mb-3 text-center">מצאי את המספר החסר:</p>
+      <div className="glass-card rounded-2xl p-6" style={{ borderColor: 'rgba(59, 130, 246, 0.2)' }}>
+        <p className="text-sm text-blue-400/80 mb-3 text-center">מצאי את המספר החסר:</p>
         <ShapeDisplay shape={question.shape} />
         {question.operation && (
-          <p className="text-xs text-blue-400/60 mt-2 text-center">({question.operation})</p>
+          <p className="text-xs text-blue-400/50 mt-2 text-center">({question.operation})</p>
         )}
       </div>
 
@@ -117,8 +117,8 @@ export default function NumbersInShapes({ question, onAnswer, showFeedback }) {
             className={`
               p-4 rounded-2xl text-2xl font-bold transition-all cursor-pointer
               ${showFeedback === 'correct' && i === question.correct
-                ? 'bg-green-600 text-white border-2 border-green-400'
-                : 'bg-blue-800/40 hover:bg-blue-700/50 text-white border-2 border-blue-500/30 hover:border-blue-400/50'
+                ? 'bg-emerald-600/80 text-white border-2 border-emerald-400/60'
+                : 'glass-card hover:border-blue-400/30 text-white'
               }
               disabled:cursor-default
             `}
