@@ -69,20 +69,55 @@ function clearPartialFromStorage() {
   }
 }
 
-// Load saved player code
-export function getSavedPlayerCode() {
+// Load saved player profile (with migration from old string format)
+export function getSavedPlayer() {
   try {
-    return localStorage.getItem(PLAYER_KEY) || null
+    const raw = localStorage.getItem(PLAYER_KEY)
+    if (!raw) return null
+    try {
+      const parsed = JSON.parse(raw)
+      if (parsed.name) return parsed
+    } catch {}
+    // Migrate old "name-PIN" string format
+    const dashIndex = raw.indexOf('-')
+    if (dashIndex > 0) {
+      const name = raw.slice(0, dashIndex)
+      const pin = raw.slice(dashIndex + 1)
+      const migrated = { name, pin, gender: 'female', isGuest: false }
+      localStorage.setItem(PLAYER_KEY, JSON.stringify(migrated))
+      return migrated
+    }
+    return null
   } catch {
     return null
   }
 }
 
-export function savePlayerCode(code) {
+export function savePlayer(player) {
   try {
-    localStorage.setItem(PLAYER_KEY, code)
+    localStorage.setItem(PLAYER_KEY, JSON.stringify(player))
   } catch (e) {
-    console.warn('Failed to save player code:', e)
+    console.warn('Failed to save player:', e)
+  }
+}
+
+export function getPlayerCode(player) {
+  if (!player || player.isGuest) return null
+  return `${player.name}-${player.pin}`
+}
+
+// Keep old exports for backward compatibility
+export function getSavedPlayerCode() {
+  const player = getSavedPlayer()
+  return getPlayerCode(player)
+}
+
+export function savePlayerCode(code) {
+  if (!code) return
+  const dashIndex = code.indexOf('-')
+  if (dashIndex > 0) {
+    const player = { name: code.slice(0, dashIndex), pin: code.slice(dashIndex + 1), gender: 'female', isGuest: false }
+    savePlayer(player)
   }
 }
 

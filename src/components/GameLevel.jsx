@@ -1,5 +1,6 @@
 import { useGameState } from '../hooks/useGameState'
-import { getRandomMessage, FUNNY_CORRECT, FUNNY_WRONG } from '../utils/scoring'
+import { getRandomMessage, getFunnyCorrect, getFunnyWrong } from '../utils/scoring'
+import { usePlayer } from '../contexts/PlayerContext'
 import StarRating from './ui/StarRating'
 import ProgressBar from './ui/ProgressBar'
 import Character from './ui/Character'
@@ -21,6 +22,7 @@ const QUESTION_COMPONENTS = {
 }
 
 export default function GameLevel({ kingdom, levelIndex, questions, levelName, onComplete, onBack, initialResults, onPartialProgress }) {
+  const { gender } = usePlayer()
   const {
     currentQuestion,
     currentIndex,
@@ -46,9 +48,9 @@ export default function GameLevel({ kingdom, levelIndex, questions, levelName, o
 
   const mood = showFeedback === 'correct' ? 'correct' : showFeedback === 'wrong' ? 'wrong' : 'idle'
   const message = showFeedback === 'correct'
-    ? getRandomMessage(FUNNY_CORRECT)
+    ? getRandomMessage(getFunnyCorrect(gender))
     : showFeedback === 'wrong'
-      ? getRandomMessage(FUNNY_WRONG)
+      ? getRandomMessage(getFunnyWrong(gender))
       : null
 
   return (

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useProgress, getSavedPlayerCode, savePlayerCode } from './hooks/useProgress'
+import { useProgress, getSavedPlayer, savePlayer, getPlayerCode } from './hooks/useProgress'
+import { PlayerProvider } from './contexts/PlayerContext'
 import WelcomeScreen from './components/WelcomeScreen'
 import WorldMap from './components/WorldMap'
 import Kingdom from './components/Kingdom'
@@ -15,12 +16,13 @@ const SCREENS = {
 function App() {
   const [screen, setScreen] = useState(SCREENS.WELCOME)
   const [selectedKingdom, setSelectedKingdom] = useState(null)
-  const [playerCode, setPlayerCode] = useState(getSavedPlayerCode)
+  const [player, setPlayer] = useState(getSavedPlayer)
+  const playerCode = getPlayerCode(player)
   const { progress, isLoading, saveLevelResults, savePartialProgress, getPartialProgress } = useProgress(playerCode)
 
-  const handlePlayerCodeChange = (code) => {
-    setPlayerCode(code)
-    savePlayerCode(code)
+  const handlePlayerChange = (newPlayer) => {
+    setPlayer(newPlayer)
+    savePlayer(newPlayer)
   }
 
   const handleSelectKingdom = (kingdom) => {
@@ -33,8 +35,10 @@ function App() {
     setScreen(SCREENS.MAP)
   }
 
+  const playerContext = player || { name: '', gender: 'female', isGuest: true }
+
   return (
-    <>
+    <PlayerProvider value={playerContext}>
       <div className="magic-bg" />
       <StarField count={50} />
       <div className="min-h-screen relative">
@@ -49,8 +53,8 @@ function App() {
               <WelcomeScreen
                 onStart={() => setScreen(SCREENS.MAP)}
                 totalStars={progress.totalStars}
-                playerCode={playerCode}
-                onPlayerCodeChange={handlePlayerCodeChange}
+                player={player}
+                onPlayerChange={handlePlayerChange}
               />
             </motion.div>
           )}
@@ -95,7 +99,7 @@ function App() {
           )}
         </AnimatePresence>
       </div>
-    </>
+    </PlayerProvider>
   )
 }
 

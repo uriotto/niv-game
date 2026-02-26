@@ -1,6 +1,8 @@
 import { motion } from 'framer-motion'
+import { usePlayer, g } from '../../contexts/PlayerContext'
 
 export default function WordRelations({ question, onAnswer, showFeedback }) {
+  const { gender } = usePlayer()
   return (
     <div className="flex flex-col items-center gap-6">
       {/* Forest decoration */}
@@ -12,7 +14,7 @@ export default function WordRelations({ question, onAnswer, showFeedback }) {
 
       {/* Word pair on sign */}
       <div className="glass-card rounded-2xl p-6 text-center" style={{ borderColor: 'rgba(16, 185, 129, 0.2)' }}>
-        <p className="text-sm text-emerald-400/80 mb-2">מצאי את הזוג עם אותו יחס:</p>
+        <p className="text-sm text-emerald-400/80 mb-2">{g('מצא', 'מצאי', gender)} את הזוג עם אותו יחס:</p>
         <div className="flex items-center justify-center gap-3 text-2xl">
           <span className="bg-emerald-500/15 px-4 py-2 rounded-xl text-white font-bold border border-emerald-500/20">
             {question.pair[0]}

@@ -605,20 +605,21 @@
       {
         "type": "sequence",
         "sequence": [
-          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0},
-          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 90},
-          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0},
-          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 90},
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "circle", "fill": "none", "stroke": "#ef4444", "rotation": 0},
+          {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
           null
         ],
         "options": [
-          {"type": "diamond", "fill": "none", "stroke": "#8b5cf6", "rotation": 0},
-          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 90},
-          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 180},
-          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0}
+          {"type": "triangle", "fill": "none", "stroke": "#22c55e", "rotation": 0},
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 0}
         ],
-        "correct": 3,
-        "hint": "היהלום מתחלף בין 0 מעלות ו-90 מעלות"
+        "correct": 0,
+        "hint": "אותן שלוש צורות חוזרות, אבל פעם מלאות ופעם ריקות"
       },
       {
         "type": "matrix",
@@ -831,21 +832,21 @@
       {
         "type": "sequence",
         "sequence": [
-          {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
-          {"type": "diamond", "fill": "none", "stroke": "#8b5cf6", "rotation": 0},
-          {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 90},
-          {"type": "diamond", "fill": "none", "stroke": "#8b5cf6", "rotation": 90},
-          {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 180},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "triangle", "fill": "none", "stroke": "#3b82f6", "rotation": 90},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 180},
+          {"type": "triangle", "fill": "none", "stroke": "#3b82f6", "rotation": 270},
+          {"type": "triangle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
           null
         ],
         "options": [
-          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 180},
-          {"type": "star", "fill": "none", "stroke": "#f59e0b", "rotation": 180},
-          {"type": "diamond", "fill": "none", "stroke": "#8b5cf6", "rotation": 180},
-          {"type": "diamond", "fill": "none", "stroke": "#8b5cf6", "rotation": 0}
+          {"type": "triangle", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 90},
+          {"type": "triangle", "fill": "none", "stroke": "#ef4444", "rotation": 90},
+          {"type": "triangle", "fill": "none", "stroke": "#3b82f6", "rotation": 90},
+          {"type": "triangle", "fill": "none", "stroke": "#3b82f6", "rotation": 0}
         ],
         "correct": 2,
-        "hint": "כוכב מלא ויהלום ריק מתחלפים, ושניהם מסתובבים 90 מעלות כל זוג"
+        "hint": "שני דפוסים: אדום מלא וכחול ריק מתחלפים, וכיוון המשולש מסתובב 90 מעלות כל פעם"
       },
       {
         "type": "matrix",
@@ -875,7 +876,7 @@
           {"type": "diamond", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0}
         ],
         "correct": 3,
-        "hint": "שלושה כללים: הצבע משתנה בכל שורה, הסיבוב מתקדם ב-90 בכל עמודה, והמילוי מתחלף"
+        "hint": "שלושה כללים: הצבע משתנה בכל שורה, בכל שורה יש דפוס מלא-ריק-מלא או ריק-מלא-ריק"
       },
       {
         "type": "sequence",
@@ -932,20 +933,20 @@
         "type": "sequence",
         "sequence": [
           {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
-          {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 90},
-          {"type": "square", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 180},
-          {"type": "square", "fill": "none", "stroke": "#ef4444", "rotation": 270},
+          {"type": "square", "fill": "none", "stroke": "#3b82f6", "rotation": 0},
+          {"type": "square", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "square", "fill": "none", "stroke": "#ef4444", "rotation": 0},
           {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
           null
         ],
         "options": [
-          {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 90},
-          {"type": "square", "fill": "none", "stroke": "#22c55e", "rotation": 90},
+          {"type": "square", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
           {"type": "square", "fill": "none", "stroke": "#22c55e", "rotation": 0},
-          {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 90}
+          {"type": "square", "fill": "none", "stroke": "#ef4444", "rotation": 0},
+          {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0}
         ],
         "correct": 1,
-        "hint": "שלושה כללים בו-זמנית: הסיבוב מתקדם ב-90, המילוי מתחלף, והצבע משתנה כל שני צעדים"
+        "hint": "שני כללים: המילוי מתחלף (מלא, ריק), והצבע משתנה כל שני צעדים (כחול, אדום, ירוק)"
       },
       {
         "type": "matrix",
@@ -956,7 +957,7 @@
             {"type": "circle", "fill": "#ec4899", "stroke": "#ec4899", "rotation": 0}
           ],
           [
-            {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 90},
+            {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0},
             {"type": "circle", "fill": "none", "stroke": "#ec4899", "rotation": 0},
             {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0}
           ],
@@ -969,13 +970,13 @@
         "missingRow": 2,
         "missingCol": 2,
         "options": [
+          {"type": "circle", "fill": "#ec4899", "stroke": "#ec4899", "rotation": 0},
+          {"type": "diamond", "fill": "none", "stroke": "#8b5cf6", "rotation": 0},
           {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 0},
-          {"type": "diamond", "fill": "none", "stroke": "#8b5cf6", "rotation": 180},
-          {"type": "diamond", "fill": "#8b5cf6", "stroke": "#8b5cf6", "rotation": 180},
           {"type": "star", "fill": "none", "stroke": "#f59e0b", "rotation": 0}
         ],
         "correct": 2,
-        "hint": "צורה וצבע בריבוע לטיני. הסיבוב גדל ב-90 באלכסון, והמילוי מתחלף"
+        "hint": "צורה וצבע בריבוע לטיני - כל צורה וכל צבע מופיעים פעם אחת בכל שורה ועמודה"
       },
       {
         "type": "sequence",
@@ -1046,7 +1047,7 @@
           {"type": "star", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 180}
         ],
         "correct": 3,
-        "hint": "שלוש צורות חוזרות, המילוי מתהפך בכל מחזור, והסיבוב מוסיף 90 כל מחזור"
+        "hint": "שלוש צורות חוזרות (כוכב, עיגול, יהלום), המילוי מתהפך בכל מחזור, והכוכב מסתובב"
       },
       {
         "type": "matrix",
@@ -1095,7 +1096,7 @@
           {"type": "star", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0}
         ],
         "correct": 2,
-        "hint": "כל זוג: יהלום ועיגול. הצבע משתנה כל זוג, המילוי מתחלף (מלא-ריק-מלא), והיהלום מסתובב 90"
+        "hint": "כל זוג: יהלום ועיגול. הצבע משתנה כל זוג, והמילוי מתחלף (מלא-ריק-מלא)"
       },
       {
         "type": "matrix",

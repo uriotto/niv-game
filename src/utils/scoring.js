@@ -69,24 +69,33 @@ export const MAGIC_POWERS = [
   'כוח הדפוסים',
 ]
 
-export const FUNNY_CORRECT = [
-  'וואו, מדהים! 🌟',
-  'את גאונה! ✨',
-  'קסם אמיתי! 🪄',
-  'הספר הקסום זוהר! 📖',
-  'כוח מוחי על! 🧠',
-  'תותחית! 💥',
-  'בול פגיעה! 🎯',
-  'מהממת! 🌈',
-]
+export function getFunnyCorrect(gender) {
+  const m = gender === 'male'
+  return [
+    'וואו, מדהים! 🌟',
+    m ? 'אתה גאון! ✨' : 'את גאונה! ✨',
+    'קסם אמיתי! 🪄',
+    'הספר הקסום זוהר! 📖',
+    'כוח מוחי על! 🧠',
+    m ? 'תותח! 💥' : 'תותחית! 💥',
+    'בול פגיעה! 🎯',
+    m ? 'מהמם! 🌈' : 'מהממת! 🌈',
+  ]
+}
 
-export const FUNNY_WRONG = [
-  'אופס! ננסה שוב? 💪',
-  'כמעט! עוד ניסיון! 🔮',
-  'גם קוסמים טועים לפעמים 🧙‍♀️',
-  'לא נורא, את יכולה! ⭐',
-  'חשבי שוב... 🤔',
-]
+export function getFunnyWrong(gender) {
+  const m = gender === 'male'
+  return [
+    'אופס! ננסה שוב? 💪',
+    'כמעט! עוד ניסיון! 🔮',
+    'גם קוסמים טועים לפעמים 🧙‍♀️',
+    m ? 'לא נורא, אתה יכול! ⭐' : 'לא נורא, את יכולה! ⭐',
+    m ? 'חשוב שוב... 🤔' : 'חשבי שוב... 🤔',
+  ]
+}
+
+export const FUNNY_CORRECT = getFunnyCorrect('female')
+export const FUNNY_WRONG = getFunnyWrong('female')
 
 export const FUNNY_HINT = [
   'הספר הקסום לוחש לך רמז... 📖',

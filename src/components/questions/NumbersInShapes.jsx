@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { usePlayer, g } from '../../contexts/PlayerContext'
 
 function ShapeDisplay({ shape }) {
   const { type, numbers, missingIndex } = shape
@@ -87,6 +88,7 @@ function ShapeDisplay({ shape }) {
 }
 
 export default function NumbersInShapes({ question, onAnswer, showFeedback }) {
+  const { gender } = usePlayer()
   return (
     <div className="flex flex-col items-center gap-6">
       {/* Crystal decoration */}
@@ -98,7 +100,7 @@ export default function NumbersInShapes({ question, onAnswer, showFeedback }) {
 
       {/* Shape with numbers */}
       <div className="glass-card rounded-2xl p-6" style={{ borderColor: 'rgba(59, 130, 246, 0.2)' }}>
-        <p className="text-sm text-blue-400/80 mb-3 text-center">מצאי את המספר החסר:</p>
+        <p className="text-sm text-blue-400/80 mb-3 text-center">{g('מצא', 'מצאי', gender)} את המספר החסר:</p>
         <ShapeDisplay shape={question.shape} />
         {question.operation && (
           <p className="text-xs text-blue-400/50 mt-2 text-center">({question.operation})</p>

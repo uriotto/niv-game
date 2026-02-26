@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { usePlayer, g } from '../../contexts/PlayerContext'
 
 function PatternShape({ shape, size = 40, color = '#fff' }) {
   if (!shape) return <span className="text-2xl">❓</span>
@@ -87,6 +88,7 @@ function SequenceRow({ sequence }) {
 }
 
 export default function PatternRecognition({ question, onAnswer, showFeedback }) {
+  const { gender } = usePlayer()
   return (
     <div className="flex flex-col items-center gap-6">
       {/* Castle decoration */}
@@ -96,7 +98,7 @@ export default function PatternRecognition({ question, onAnswer, showFeedback })
         <span className="animate-float" style={{ animationDelay: '0.6s' }}>🗝️</span>
       </div>
 
-      <p className="text-sm text-pink-400/80 text-center">מצאי את הצורה שמשלימה את הדפוס:</p>
+      <p className="text-sm text-pink-400/80 text-center">{g('מצא', 'מצאי', gender)} את הצורה שמשלימה את הדפוס:</p>
 
       {/* Pattern display */}
       {question.type === 'matrix' ? (

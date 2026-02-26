@@ -1,14 +1,17 @@
 import { motion } from 'framer-motion'
-
-const expressions = {
-  idle: { emoji: '🧙‍♀️', label: 'ניב הקוסמת' },
-  thinking: { emoji: '🤔', label: 'חושבת...' },
-  correct: { emoji: '🎉', label: 'יופי!' },
-  wrong: { emoji: '💪', label: 'ננסה שוב!' },
-  celebration: { emoji: '🌟', label: 'מדהים!' },
-}
+import { usePlayer, g } from '../../contexts/PlayerContext'
 
 export default function Character({ mood = 'idle', message }) {
+  const { name, gender } = usePlayer()
+
+  const expressions = {
+    idle: { emoji: g('🧙‍♂️', '🧙‍♀️', gender), label: `${name} ${g('הקוסם', 'הקוסמת', gender)}` },
+    thinking: { emoji: '🤔', label: g('חושב...', 'חושבת...', gender) },
+    correct: { emoji: '🎉', label: 'יופי!' },
+    wrong: { emoji: '💪', label: 'ננסה שוב!' },
+    celebration: { emoji: '🌟', label: 'מדהים!' },
+  }
+
   const { emoji } = expressions[mood] || expressions.idle
   const showAvatar = mood === 'idle'
 
@@ -21,7 +24,7 @@ export default function Character({ mood = 'idle', message }) {
       {showAvatar ? (
         <motion.img
           src={`${import.meta.env.BASE_URL}images/niv-wizard.png`}
-          alt="ניב"
+          alt={name}
           className="w-12 h-12 object-contain drop-shadow-lg"
           animate={{ y: [0, -3, 0] }}
           transition={{ duration: 2, repeat: Infinity, ease: 'easeInOut' }}
