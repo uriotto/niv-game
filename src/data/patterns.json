@@ -196,7 +196,7 @@
           {"type": "star", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0}
         ],
         "correct": 3,
-        "hint": "הצורות הולכות וגדלות במספר הצלעות - מה בא אחרי יהלום?"
+        "hint": "הצורות מתחלפות לפי רצף מוכר - עיגול, ריבוע, משולש, יהלום... מה בא אחרי?"
       },
       {
         "type": "matrix",
@@ -496,12 +496,12 @@
         "missingRow": 2,
         "missingCol": 2,
         "options": [
-          {"type": "diamond", "fill": "none", "stroke": "#f59e0b", "rotation": 0},
+          {"type": "diamond", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
           {"type": "diamond", "fill": "#f59e0b", "stroke": "#f59e0b", "rotation": 0},
           {"type": "star", "fill": "none", "stroke": "#f59e0b", "rotation": 0},
-          {"type": "diamond", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0}
+          {"type": "diamond", "fill": "none", "stroke": "#f59e0b", "rotation": 0}
         ],
-        "correct": 1,
+        "correct": 3,
         "hint": "ספרו את היהלומים המלאים בכל שורה - 2, 1, ? והדפוס ממשיך באלכסון"
       },
       {
@@ -642,12 +642,12 @@
         "missingRow": 2,
         "missingCol": 2,
         "options": [
-          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
           {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 0},
+          {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
           {"type": "square", "fill": "#3b82f6", "stroke": "#3b82f6", "rotation": 0},
           {"type": "circle", "fill": "none", "stroke": "#ef4444", "rotation": 0}
         ],
-        "correct": 3,
+        "correct": 1,
         "hint": "הצורות מסתובבות בריבוע לטיני, והמילוי מתחלף באלכסון - מלא, ריק, מלא"
       },
       {
@@ -778,7 +778,7 @@
           {"type": "triangle", "fill": "#22c55e", "stroke": "#22c55e", "rotation": 180}
         ],
         "correct": 0,
-        "hint": "שלושה כללים: הצורה בריבוע לטיני, המילוי מתחלף (מלא-ריק-מלא באלכסון), והסיבוב גדל ב-90 בכל שורה"
+        "hint": "שלושה כללים: הצורה בריבוע לטיני, שתי השורות הראשונות דומות במילוי והשלישית הפוכה, והסיבוב גדל ב-90 בכל שורה"
       },
       {
         "type": "sequence",
@@ -926,7 +926,7 @@
           {"type": "triangle", "fill": "none", "stroke": "#ef4444", "rotation": 0}
         ],
         "correct": 1,
-        "hint": "צורה בריבוע לטיני, צבע בריבוע לטיני, ומילוי: באלכסון הראשי תמיד מלא ובשאר מתחלף"
+        "hint": "צורה בריבוע לטיני, צבע בריבוע לטיני, ובכל שורה שני תאים מלאים ואחד ריק"
       },
       {
         "type": "sequence",
@@ -996,7 +996,7 @@
           {"type": "diamond", "fill": "none", "stroke": "#f59e0b", "rotation": 0}
         ],
         "correct": 0,
-        "hint": "כל זוג: צורה מלאה ואז ריקה. הצורה והצבע משתנים בכל זוג. הסיבוב מוסיף 90 לאיבר השני"
+        "hint": "כל זוג: צורה מלאה ואז ריקה. הצורה והצבע משתנים בכל זוג"
       },
       {
         "type": "matrix",
@@ -1119,13 +1119,13 @@
         "missingRow": 2,
         "missingCol": 2,
         "options": [
-          {"type": "circle", "fill": "none", "stroke": "#ef4444", "rotation": 0},
           {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 0},
+          {"type": "circle", "fill": "none", "stroke": "#ef4444", "rotation": 0},
           {"type": "star", "fill": "none", "stroke": "#f59e0b", "rotation": 0},
           {"type": "circle", "fill": "#ef4444", "stroke": "#ef4444", "rotation": 180}
         ],
-        "correct": 1,
-        "hint": "צורה וצבע בריבוע לטיני. מילוי: באלכסון מלא ומחוצה לו מתחלף. ריבועים גם מסתובבים ב-90 כל שורה"
+        "correct": 0,
+        "hint": "צורה וצבע בריבוע לטיני. בכל שורה שני תאים מלאים ואחד ריק. ריבועים גם מסתובבים ב-90 כל שורה"
       }
     ]
   ]
