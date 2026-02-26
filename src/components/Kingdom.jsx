@@ -26,7 +26,7 @@ const KINGDOM_COLORS = {
   patterns: { accent: '#ec4899', bg: 'rgba(236, 72, 153, 0.08)', border: 'rgba(236, 72, 153, 0.25)', image: 'kingdom-patterns.jpg' },
 }
 
-export default function Kingdom({ kingdom, progress, onComplete, onBack }) {
+export default function Kingdom({ kingdom, progress, onComplete, onBack, getPartialProgress, savePartialProgress }) {
   const [selectedLevel, setSelectedLevel] = useState(null)
   const kingdomProgress = progress.kingdoms[kingdom.id]
   const allQuestions = DATA_MAP[kingdom.id]
@@ -34,12 +34,15 @@ export default function Kingdom({ kingdom, progress, onComplete, onBack }) {
 
   if (selectedLevel !== null) {
     const levelQuestions = allQuestions.levels[selectedLevel]
+    const partial = getPartialProgress ? getPartialProgress(kingdom.id, selectedLevel) : null
     return (
       <GameLevel
         kingdom={kingdom}
         levelIndex={selectedLevel}
         questions={levelQuestions}
         levelName={LEVEL_NAMES[selectedLevel]}
+        initialResults={partial}
+        onPartialProgress={savePartialProgress}
         onComplete={(results) => {
           onComplete(kingdom.id, selectedLevel, results)
           setSelectedLevel(null)
@@ -128,7 +131,12 @@ export default function Kingdom({ kingdom, progress, onComplete, onBack }) {
                     {isDone
                       ? <span className="text-[#f0c850]">✅ הושלם - {stars}/15 כוכבים</span>
                       : isUnlocked
-                        ? '15 שאלות'
+                        ? (() => {
+                            const partial = getPartialProgress ? getPartialProgress(kingdom.id, i) : null
+                            return partial && partial.length > 0
+                              ? <span className="text-[#c0b89c]">ממשיכים - {partial.length}/15 שאלות</span>
+                              : '15 שאלות'
+                          })()
                         : 'נעול - צריך 11 כוכבים בשלב הקודם'
                     }
                   </p>

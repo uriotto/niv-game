@@ -2,19 +2,19 @@ import { motion } from 'framer-motion'
 import { KINGDOMS } from '../utils/scoring'
 
 const KINGDOM_POSITIONS = [
-  { x: 50, y: 16 },
-  { x: 32, y: 40 },
-  { x: 68, y: 40 },
-  { x: 36, y: 72 },
-  { x: 64, y: 72 },
+  { x: 42, y: 14 },
+  { x: 18, y: 43 },
+  { x: 68, y: 43 },
+  { x: 23, y: 75 },
+  { x: 63, y: 75 },
 ]
 
 const PATH_CURVES = [
-  { x1: 50, y1: 24, x2: 32, y2: 40, cx1: 42, cy1: 28, cx2: 34, cy2: 32 },
-  { x1: 50, y1: 24, x2: 68, y2: 40, cx1: 58, cy1: 28, cx2: 66, cy2: 32 },
-  { x1: 32, y1: 48, x2: 36, y2: 72, cx1: 30, cy1: 56, cx2: 33, cy2: 64 },
-  { x1: 68, y1: 48, x2: 64, y2: 72, cx1: 70, cy1: 56, cx2: 67, cy2: 64 },
-  { x1: 36, y1: 72, x2: 64, y2: 72, cx1: 44, cy1: 82, cx2: 56, cy2: 82 },
+  { x1: 42, y1: 22, x2: 18, y2: 43, cx1: 32, cy1: 28, cx2: 22, cy2: 36 },
+  { x1: 42, y1: 22, x2: 68, y2: 43, cx1: 54, cy1: 28, cx2: 64, cy2: 36 },
+  { x1: 18, y1: 51, x2: 23, y2: 75, cx1: 16, cy1: 60, cx2: 20, cy2: 68 },
+  { x1: 68, y1: 51, x2: 63, y2: 75, cx1: 70, cy1: 60, cx2: 66, cy2: 68 },
+  { x1: 23, y1: 75, x2: 63, y2: 75, cx1: 36, cy1: 85, cx2: 50, cy2: 85 },
 ]
 
 const KINGDOM_COLORS = {
@@ -55,7 +55,7 @@ export default function WorldMap({ progress, onSelectKingdom, onBack }) {
       </motion.h1>
 
       {/* Map container */}
-      <div className="relative w-full max-w-2xl aspect-[4/3] glass-card rounded-3xl p-4 overflow-hidden">
+      <div className="relative w-full max-w-2xl aspect-square md:aspect-[4/3] glass-card rounded-3xl p-4 overflow-hidden">
         {/* World map background */}
         <img
           src={`${import.meta.env.BASE_URL}images/world-map.jpg`}
@@ -121,7 +121,7 @@ export default function WorldMap({ progress, onSelectKingdom, onBack }) {
               <motion.div
                 animate={isCompleted ? { rotate: [0, 3, -3, 0] } : {}}
                 transition={{ repeat: Infinity, duration: 4 }}
-                className="relative w-16 h-16 md:w-20 md:h-20 rounded-2xl flex items-center justify-center text-3xl md:text-4xl transition-shadow duration-300"
+                className="relative w-12 h-12 md:w-20 md:h-20 rounded-2xl flex items-center justify-center text-2xl md:text-4xl transition-shadow duration-300"
                 style={{
                   background: `linear-gradient(135deg, ${colors.bg}, ${colors.bg}cc)`,
                   border: `2px solid ${isCompleted ? '#f0c850' : colors.border}40`,
@@ -169,13 +169,13 @@ export default function WorldMap({ progress, onSelectKingdom, onBack }) {
         <motion.img
           src={`${import.meta.env.BASE_URL}images/niv-wizard.png`}
           alt="ניב"
-          className="absolute w-12 h-12 md:w-16 md:h-16 object-contain pointer-events-none z-20 drop-shadow-lg"
+          className="absolute w-10 h-10 md:w-16 md:h-16 object-contain pointer-events-none z-20 drop-shadow-lg"
           animate={{
             x: [0, 20, -15, 8, 0],
             y: [0, -10, 8, -5, 0],
           }}
           transition={{ duration: 12, repeat: Infinity, ease: 'easeInOut' }}
-          style={{ left: '48%', top: '46%' }}
+          style={{ left: '42%', top: '46%' }}
         />
       </div>
     </div>

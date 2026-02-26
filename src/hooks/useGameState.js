@@ -1,9 +1,9 @@
 import { useState, useCallback } from 'react'
 import { getStarType } from '../utils/scoring'
 
-export function useGameState(questions) {
-  const [currentIndex, setCurrentIndex] = useState(0)
-  const [results, setResults] = useState([])
+export function useGameState(questions, { initialResults = [], onResultsChange } = {}) {
+  const [currentIndex, setCurrentIndex] = useState(initialResults.length)
+  const [results, setResults] = useState(initialResults)
   const [attempt, setAttempt] = useState(1)
   const [usedHint, setUsedHint] = useState(false)
   const [showFeedback, setShowFeedback] = useState(null) // 'correct' | 'wrong' | null
@@ -19,8 +19,14 @@ export function useGameState(questions) {
 
     if (isCorrect) {
       const star = getStarType(attempt, usedHint)
-      setResults(prev => [...prev, star])
+      const newResults = [...results, star]
+      setResults(newResults)
       setShowFeedback('correct')
+
+      // Save partial progress after each correct answer
+      if (onResultsChange) {
+        onResultsChange(newResults)
+      }
 
       setTimeout(() => {
         setShowFeedback(null)
@@ -37,7 +43,7 @@ export function useGameState(questions) {
       setShowFeedback('wrong')
       setTimeout(() => setShowFeedback(null), 1000)
     }
-  }, [currentQuestion, currentIndex, totalQuestions, attempt, usedHint, showFeedback])
+  }, [currentQuestion, currentIndex, totalQuestions, attempt, usedHint, showFeedback, results, onResultsChange])
 
   const useHint = useCallback(() => {
     setUsedHint(true)
@@ -50,7 +56,10 @@ export function useGameState(questions) {
     setUsedHint(false)
     setShowFeedback(null)
     setIsComplete(false)
-  }, [])
+    if (onResultsChange) {
+      onResultsChange([])
+    }
+  }, [onResultsChange])
 
   return {
     currentQuestion,

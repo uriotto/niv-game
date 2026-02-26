@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { motion } from 'framer-motion'
 
 const stagger = {
@@ -10,7 +11,20 @@ const fadeUp = {
   show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
 }
 
-export default function WelcomeScreen({ onStart, totalStars }) {
+export default function WelcomeScreen({ onStart, totalStars, playerCode, onPlayerCodeChange }) {
+  const saved = playerCode ? playerCode.split('-') : ['', '']
+  const [nameInput, setNameInput] = useState(saved[0] || '')
+  const [pinInput, setPinInput] = useState(saved[1] || '')
+
+  const isValid = nameInput.trim().length > 0 && /^\d{4}$/.test(pinInput)
+
+  const handleStart = () => {
+    if (isValid) {
+      onPlayerCodeChange(`${nameInput.trim()}-${pinInput}`)
+      onStart()
+    }
+  }
+
   return (
     <motion.div
       variants={stagger}
@@ -57,12 +71,47 @@ export default function WelcomeScreen({ onStart, totalStars }) {
 
       <motion.p
         variants={fadeUp}
-        className="text-[#a0a0b8] text-lg mb-10 text-center max-w-md leading-relaxed"
+        className="text-[#a0a0b8] text-lg mb-8 text-center max-w-md leading-relaxed"
       >
         מסע קסום דרך חמש ממלכות
         <br />
         מלאות חידות, מילים, מספרים וצורות
       </motion.p>
+
+      {/* Player login */}
+      <motion.div
+        variants={fadeUp}
+        className="glass-card rounded-2xl px-6 py-4 mb-8 w-full max-w-xs"
+      >
+        <label className="block text-[#a0a0b8] text-sm mb-2 text-center">
+          שם
+        </label>
+        <input
+          type="text"
+          value={nameInput}
+          onChange={(e) => setNameInput(e.target.value)}
+          placeholder="למשל: ניב"
+          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-center text-white text-lg placeholder-white/20 focus:outline-none focus:border-[#f0c850]/50 transition-colors"
+          dir="rtl"
+        />
+        <label className="block text-[#a0a0b8] text-sm mb-2 mt-3 text-center">
+          קוד סודי (4 ספרות)
+        </label>
+        <input
+          type="tel"
+          inputMode="numeric"
+          maxLength={4}
+          value={pinInput}
+          onChange={(e) => setPinInput(e.target.value.replace(/\D/g, '').slice(0, 4))}
+          onKeyDown={(e) => e.key === 'Enter' && handleStart()}
+          placeholder="1234"
+          className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-center text-white text-2xl tracking-[0.5em] placeholder-white/20 focus:outline-none focus:border-[#f0c850]/50 transition-colors font-mono"
+          dir="ltr"
+        />
+        <p className="text-[#50506a] text-xs mt-2 text-center">
+          השם והקוד שומרים את ההתקדמות בכל מכשיר
+        </p>
+      </motion.div>
 
       {/* Character card */}
       <motion.div
@@ -98,8 +147,9 @@ export default function WelcomeScreen({ onStart, totalStars }) {
         variants={fadeUp}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.97 }}
-        onClick={onStart}
-        className="btn-magic text-xl px-12 py-4"
+        onClick={handleStart}
+        disabled={!isValid}
+        className={`btn-magic text-xl px-12 py-4 ${!isValid ? 'opacity-40 cursor-not-allowed' : ''}`}
       >
         יאללה להרפתקה ✨
       </motion.button>

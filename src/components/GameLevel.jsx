@@ -20,7 +20,7 @@ const QUESTION_COMPONENTS = {
   patterns: PatternRecognition,
 }
 
-export default function GameLevel({ kingdom, levelIndex, questions, levelName, onComplete, onBack }) {
+export default function GameLevel({ kingdom, levelIndex, questions, levelName, onComplete, onBack, initialResults, onPartialProgress }) {
   const {
     currentQuestion,
     currentIndex,
@@ -33,7 +33,14 @@ export default function GameLevel({ kingdom, levelIndex, questions, levelName, o
     submitAnswer,
     useHint,
     reset,
-  } = useGameState(questions)
+  } = useGameState(questions, {
+    initialResults: initialResults || [],
+    onResultsChange: (newResults) => {
+      if (onPartialProgress && newResults.length < questions.length) {
+        onPartialProgress(kingdom.id, levelIndex, newResults)
+      }
+    },
+  })
 
   const QuestionComponent = QUESTION_COMPONENTS[kingdom.id]
 

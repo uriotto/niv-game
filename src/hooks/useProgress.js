@@ -1,16 +1,10 @@
-import { useState, useCallback } from 'react'
+import { useState, useCallback, useEffect, useRef } from 'react'
+import { doc, getDoc, setDoc } from 'firebase/firestore'
+import { db } from '../firebase'
 
 const STORAGE_KEY = 'niv-magic-book-progress'
-
-function loadProgress() {
-  try {
-    const saved = localStorage.getItem(STORAGE_KEY)
-    if (saved) return JSON.parse(saved)
-  } catch (e) {
-    console.warn('Failed to load progress:', e)
-  }
-  return getDefaultProgress()
-}
+const PARTIAL_KEY = 'niv-magic-book-partial'
+const PLAYER_KEY = 'niv-magic-book-player'
 
 function getDefaultProgress() {
   return {
@@ -26,36 +20,149 @@ function getDefaultProgress() {
   }
 }
 
-export function useProgress() {
-  const [progress, setProgress] = useState(loadProgress)
+function loadLocal() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY)
+    if (saved) return JSON.parse(saved)
+  } catch (e) {
+    console.warn('Failed to load local progress:', e)
+  }
+  return null
+}
 
-  const saveProgress = useCallback((newProgress) => {
-    setProgress(newProgress)
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(newProgress))
-    } catch (e) {
-      console.warn('Failed to save progress:', e)
+function saveLocal(progress) {
+  try {
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(progress))
+  } catch (e) {
+    console.warn('Failed to save local progress:', e)
+  }
+}
+
+function loadPartialProgress(kingdomId, levelIndex) {
+  try {
+    const saved = localStorage.getItem(PARTIAL_KEY)
+    if (saved) {
+      const partial = JSON.parse(saved)
+      if (partial.kingdomId === kingdomId && partial.levelIndex === levelIndex) {
+        return partial.results
+      }
     }
-  }, [])
+  } catch (e) {
+    console.warn('Failed to load partial progress:', e)
+  }
+  return null
+}
+
+function savePartialToStorage(kingdomId, levelIndex, results) {
+  try {
+    localStorage.setItem(PARTIAL_KEY, JSON.stringify({ kingdomId, levelIndex, results }))
+  } catch (e) {
+    console.warn('Failed to save partial progress:', e)
+  }
+}
+
+function clearPartialFromStorage() {
+  try {
+    localStorage.removeItem(PARTIAL_KEY)
+  } catch (e) {
+    console.warn('Failed to clear partial progress:', e)
+  }
+}
+
+// Load saved player code
+export function getSavedPlayerCode() {
+  try {
+    return localStorage.getItem(PLAYER_KEY) || null
+  } catch {
+    return null
+  }
+}
+
+export function savePlayerCode(code) {
+  try {
+    localStorage.setItem(PLAYER_KEY, code)
+  } catch (e) {
+    console.warn('Failed to save player code:', e)
+  }
+}
+
+async function loadFromCloud(playerCode) {
+  try {
+    const docRef = doc(db, 'players', playerCode)
+    const docSnap = await getDoc(docRef)
+    if (docSnap.exists()) {
+      return docSnap.data().progress
+    }
+  } catch (e) {
+    console.warn('Failed to load from cloud:', e)
+  }
+  return null
+}
+
+async function saveToCloud(playerCode, progress) {
+  try {
+    const docRef = doc(db, 'players', playerCode)
+    await setDoc(docRef, { progress, updatedAt: new Date().toISOString() }, { merge: true })
+  } catch (e) {
+    console.warn('Failed to save to cloud:', e)
+  }
+}
+
+export function useProgress(playerCode) {
+  const [progress, setProgress] = useState(() => loadLocal() || getDefaultProgress())
+  const [isLoading, setIsLoading] = useState(!!playerCode)
+  const playerCodeRef = useRef(playerCode)
+  playerCodeRef.current = playerCode
+
+  // Load from cloud on mount or when playerCode changes
+  useEffect(() => {
+    if (!playerCode) {
+      setIsLoading(false)
+      return
+    }
+
+    setIsLoading(true)
+    loadFromCloud(playerCode).then(cloudProgress => {
+      if (cloudProgress) {
+        const local = loadLocal()
+        // Use whichever has more total stars (more progress)
+        const cloudStars = cloudProgress.totalStars || 0
+        const localStars = local?.totalStars || 0
+        const best = cloudStars >= localStars ? cloudProgress : local || cloudProgress
+        setProgress(best)
+        saveLocal(best)
+        saveToCloud(playerCode, best)
+      } else {
+        // No cloud data - push local data to cloud
+        const local = loadLocal() || getDefaultProgress()
+        setProgress(local)
+        saveToCloud(playerCode, local)
+      }
+      setIsLoading(false)
+    })
+  }, [playerCode])
 
   const saveLevelResults = useCallback((kingdomId, levelIndex, results) => {
+    clearPartialFromStorage()
     setProgress(prev => {
       const next = JSON.parse(JSON.stringify(prev))
-      next.kingdoms[kingdomId].levels[levelIndex] = results
 
-      // Unlock next level if enough stars
+      // Keep the better score when replaying a level
+      const oldResults = next.kingdoms[kingdomId].levels[levelIndex]
+      const oldStars = oldResults.filter(r => r === 'gold' || r === 'silver').length
+      const newStars = results.filter(r => r === 'gold' || r === 'silver').length
+      next.kingdoms[kingdomId].levels[levelIndex] = newStars >= oldStars ? results : oldResults
+
       const stars = results.filter(r => r === 'gold' || r === 'silver').length
       if (stars >= 11 && levelIndex < 2) {
         next.kingdoms[kingdomId].unlocked[levelIndex + 1] = true
       }
 
-      // Check if kingdom is completed (all 3 levels done)
       const allDone = next.kingdoms[kingdomId].levels.every(l => l.length === 15)
       if (allDone && !next.completedKingdoms.includes(kingdomId)) {
         next.completedKingdoms.push(kingdomId)
       }
 
-      // Count total stars
       let total = 0
       for (const k of Object.values(next.kingdoms)) {
         for (const level of k.levels) {
@@ -64,19 +171,31 @@ export function useProgress() {
       }
       next.totalStars = total
 
-      try {
-        localStorage.setItem(STORAGE_KEY, JSON.stringify(next))
-      } catch (e) {
-        console.warn('Failed to save progress:', e)
+      saveLocal(next)
+      if (playerCodeRef.current) {
+        saveToCloud(playerCodeRef.current, next)
       }
       return next
     })
   }, [])
 
+  const savePartialProgress = useCallback((kingdomId, levelIndex, results) => {
+    savePartialToStorage(kingdomId, levelIndex, results)
+  }, [])
+
+  const getPartialProgress = useCallback((kingdomId, levelIndex) => {
+    return loadPartialProgress(kingdomId, levelIndex)
+  }, [])
+
   const resetProgress = useCallback(() => {
     const fresh = getDefaultProgress()
-    saveProgress(fresh)
-  }, [saveProgress])
+    setProgress(fresh)
+    saveLocal(fresh)
+    clearPartialFromStorage()
+    if (playerCodeRef.current) {
+      saveToCloud(playerCodeRef.current, fresh)
+    }
+  }, [])
 
-  return { progress, saveLevelResults, resetProgress }
+  return { progress, isLoading, saveLevelResults, savePartialProgress, getPartialProgress, resetProgress }
 }

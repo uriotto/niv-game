@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { useProgress } from './hooks/useProgress'
+import { useProgress, getSavedPlayerCode, savePlayerCode } from './hooks/useProgress'
 import WelcomeScreen from './components/WelcomeScreen'
 import WorldMap from './components/WorldMap'
 import Kingdom from './components/Kingdom'
@@ -15,7 +15,13 @@ const SCREENS = {
 function App() {
   const [screen, setScreen] = useState(SCREENS.WELCOME)
   const [selectedKingdom, setSelectedKingdom] = useState(null)
-  const { progress, saveLevelResults } = useProgress()
+  const [playerCode, setPlayerCode] = useState(getSavedPlayerCode)
+  const { progress, isLoading, saveLevelResults, savePartialProgress, getPartialProgress } = useProgress(playerCode)
+
+  const handlePlayerCodeChange = (code) => {
+    setPlayerCode(code)
+    savePlayerCode(code)
+  }
 
   const handleSelectKingdom = (kingdom) => {
     setSelectedKingdom(kingdom)
@@ -43,6 +49,8 @@ function App() {
               <WelcomeScreen
                 onStart={() => setScreen(SCREENS.MAP)}
                 totalStars={progress.totalStars}
+                playerCode={playerCode}
+                onPlayerCodeChange={handlePlayerCodeChange}
               />
             </motion.div>
           )}
@@ -54,11 +62,17 @@ function App() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
             >
-              <WorldMap
-                progress={progress}
-                onSelectKingdom={handleSelectKingdom}
-                onBack={() => setScreen(SCREENS.WELCOME)}
-              />
+              {isLoading ? (
+                <div className="min-h-screen flex items-center justify-center">
+                  <p className="text-[#a0a0b8] text-lg">טוען התקדמות...</p>
+                </div>
+              ) : (
+                <WorldMap
+                  progress={progress}
+                  onSelectKingdom={handleSelectKingdom}
+                  onBack={() => setScreen(SCREENS.WELCOME)}
+                />
+              )}
             </motion.div>
           )}
 
@@ -74,6 +88,8 @@ function App() {
                 progress={progress}
                 onComplete={handleLevelComplete}
                 onBack={() => setScreen(SCREENS.MAP)}
+                getPartialProgress={getPartialProgress}
+                savePartialProgress={savePartialProgress}
               />
             </motion.div>
           )}
