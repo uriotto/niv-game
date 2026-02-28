@@ -65,22 +65,24 @@ function MatrixGrid({ matrix, missingRow, missingCol }) {
 }
 
 function SequenceRow({ sequence }) {
+  const isLong = sequence.length > 4
+  const shapeSize = isLong ? 32 : 40
   return (
-    <div className="flex gap-2 items-center justify-center glass-card rounded-xl p-3" style={{ borderColor: 'rgba(236, 72, 153, 0.15)' }}>
+    <div className={`flex ${isLong ? 'gap-1' : 'gap-2'} items-center justify-center glass-card rounded-xl p-3 w-full`} style={{ borderColor: 'rgba(236, 72, 153, 0.15)' }}>
       {sequence.map((item, i) => (
-        <div key={i} className="flex items-center gap-2">
-          <div className={`w-14 h-14 flex items-center justify-center rounded-lg ${
+        <div key={i} className={`flex items-center ${isLong ? 'gap-1' : 'gap-2'}`}>
+          <div className={`${isLong ? 'w-10 h-10' : 'w-14 h-14'} flex items-center justify-center rounded-lg shrink-0 ${
             item === null
               ? 'bg-[#f0c850]/15 border-2 border-[#f0c850]/50 border-dashed'
               : 'bg-white/[0.03] border border-white/[0.06]'
           }`}>
             {item === null ? (
-              <span className="text-[#f0c850] text-xl">?</span>
+              <span className="text-[#f0c850] text-lg">?</span>
             ) : (
-              <PatternShape shape={item} />
+              <PatternShape shape={item} size={shapeSize} />
             )}
           </div>
-          {i < sequence.length - 1 && <span className="text-pink-400/60">→</span>}
+          {i < sequence.length - 1 && <span className={`text-pink-400/60 ${isLong ? 'text-xs' : ''}`}>→</span>}
         </div>
       ))}
     </div>
