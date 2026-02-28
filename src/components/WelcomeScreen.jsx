@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { g } from '../contexts/PlayerContext'
+import { checkPlayerExists, getPlayerCode } from '../hooks/useProgress'
 
 const stagger = {
   hidden: {},
@@ -16,14 +17,39 @@ export default function WelcomeScreen({ onStart, totalStars, player, onPlayerCha
   const [nameInput, setNameInput] = useState(player?.name || '')
   const [pinInput, setPinInput] = useState(player?.pin || '')
   const [gender, setGender] = useState(player?.gender || 'female')
+  const [error, setError] = useState('')
+  const [checking, setChecking] = useState(false)
 
   const isValid = nameInput.trim().length > 0 && /^\d{4}$/.test(pinInput)
 
-  const handleStart = () => {
-    if (isValid) {
-      onPlayerChange({ name: nameInput.trim(), pin: pinInput, gender, isGuest: false })
+  const handleStart = async () => {
+    if (!isValid || checking) return
+    const newPlayer = { name: nameInput.trim(), pin: pinInput, gender, isGuest: false }
+    const code = getPlayerCode(newPlayer)
+
+    // If returning as the same player, skip collision check
+    if (player && getPlayerCode(player) === code) {
+      onPlayerChange({ ...newPlayer, gender })
       onStart()
+      return
     }
+
+    // New registration - check for collision
+    setError('')
+    setChecking(true)
+    try {
+      const result = await checkPlayerExists(code)
+      if (result.exists && result.gender && result.gender !== gender) {
+        setError('הקוד הזה כבר תפוס! נסו קוד אחר.')
+        setChecking(false)
+        return
+      }
+    } catch {
+      // Network error - allow login anyway
+    }
+    setChecking(false)
+    onPlayerChange(newPlayer)
+    onStart()
   }
 
   const handleGuestStart = () => {
@@ -154,6 +180,9 @@ export default function WelcomeScreen({ onStart, totalStars, player, onPlayerCha
           <br />
           אפשר גם לשחק בלי רישום 😊
         </p>
+        {error && (
+          <p className="text-red-400 text-sm mt-2 text-center">{error}</p>
+        )}
       </motion.div>
 
       {/* Character card */}
@@ -191,10 +220,10 @@ export default function WelcomeScreen({ onStart, totalStars, player, onPlayerCha
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.97 }}
           onClick={handleStart}
-          disabled={!isValid}
-          className={`btn-magic text-xl px-12 py-4 ${!isValid ? 'opacity-40 cursor-not-allowed' : ''}`}
+          disabled={!isValid || checking}
+          className={`btn-magic text-xl px-12 py-4 ${!isValid || checking ? 'opacity-40 cursor-not-allowed' : ''}`}
         >
-          יאללה להרפתקה ✨
+          {checking ? 'בודק...' : 'יאללה להרפתקה ✨'}
         </motion.button>
         <motion.button
           whileHover={{ scale: 1.03 }}

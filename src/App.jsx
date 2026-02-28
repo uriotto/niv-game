@@ -18,7 +18,7 @@ function App() {
   const [selectedKingdom, setSelectedKingdom] = useState(null)
   const [player, setPlayer] = useState(getSavedPlayer)
   const playerCode = getPlayerCode(player)
-  const { progress, isLoading, saveLevelResults, savePartialProgress, getPartialProgress } = useProgress(playerCode)
+  const { progress, isLoading, cloudSyncFailed, saveLevelResults, savePartialProgress, getPartialProgress } = useProgress(playerCode, player?.gender)
 
   const handlePlayerChange = (newPlayer) => {
     setPlayer(newPlayer)
@@ -71,11 +71,18 @@ function App() {
                   <p className="text-[#a0a0b8] text-lg">טוען התקדמות...</p>
                 </div>
               ) : (
-                <WorldMap
-                  progress={progress}
-                  onSelectKingdom={handleSelectKingdom}
-                  onBack={() => setScreen(SCREENS.WELCOME)}
-                />
+                <>
+                  <WorldMap
+                    progress={progress}
+                    onSelectKingdom={handleSelectKingdom}
+                    onBack={() => setScreen(SCREENS.WELCOME)}
+                  />
+                  {cloudSyncFailed && (
+                    <div className="fixed bottom-4 left-1/2 -translate-x-1/2 bg-[#2a2a3a]/90 rounded-xl px-4 py-2 text-sm text-[#a0a0b8] z-50 backdrop-blur-sm">
+                      לא הצלחנו להתחבר לענן. ההתקדמות נשמרת מקומית.
+                    </div>
+                  )}
+                </>
               )}
             </motion.div>
           )}
