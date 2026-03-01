@@ -1,5 +1,6 @@
 import { useState, useCallback } from 'react'
 import { getStarType } from '../utils/scoring'
+import { playCorrect, playWrong, playHint as playHintSound } from '../utils/sounds'
 
 export function useGameState(questions, { initialResults = [], onResultsChange } = {}) {
   const [currentIndex, setCurrentIndex] = useState(initialResults.length)
@@ -18,6 +19,7 @@ export function useGameState(questions, { initialResults = [], onResultsChange }
     const isCorrect = answerIndex === currentQuestion.correct
 
     if (isCorrect) {
+      playCorrect()
       const star = getStarType(attempt, usedHint)
       const newResults = [...results, star]
       setResults(newResults)
@@ -39,6 +41,7 @@ export function useGameState(questions, { initialResults = [], onResultsChange }
         }
       }, 1500)
     } else {
+      playWrong()
       setAttempt(prev => prev + 1)
       setShowFeedback('wrong')
       setTimeout(() => setShowFeedback(null), 1000)
@@ -46,6 +49,7 @@ export function useGameState(questions, { initialResults = [], onResultsChange }
   }, [currentQuestion, currentIndex, totalQuestions, attempt, usedHint, showFeedback, results, onResultsChange])
 
   const useHint = useCallback(() => {
+    playHintSound()
     setUsedHint(true)
   }, [])
 

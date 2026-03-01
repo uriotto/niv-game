@@ -1,10 +1,22 @@
+import { useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { countStars, STAR_GOLD } from '../../utils/scoring'
+import { playLevelComplete, playLevelFail } from '../../utils/sounds'
 
 export default function CelebrationModal({ show, results, levelName, kingdomName, magicPower, onContinue, onRetry }) {
   const totalStars = countStars(results)
   const goldStars = results.filter(r => r === STAR_GOLD).length
   const passed = totalStars >= 11
+
+  useEffect(() => {
+    if (show) {
+      if (passed) {
+        playLevelComplete()
+      } else {
+        playLevelFail()
+      }
+    }
+  }, [show, passed])
 
   return (
     <AnimatePresence>

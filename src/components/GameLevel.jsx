@@ -1,5 +1,7 @@
+import { useState } from 'react'
 import { useGameState } from '../hooks/useGameState'
 import { getRandomMessage, getFunnyCorrect, getFunnyWrong } from '../utils/scoring'
+import { isMuted, toggleMute } from '../utils/sounds'
 import { usePlayer } from '../contexts/PlayerContext'
 import StarRating from './ui/StarRating'
 import ProgressBar from './ui/ProgressBar'
@@ -23,6 +25,12 @@ const QUESTION_COMPONENTS = {
 
 export default function GameLevel({ kingdom, levelIndex, questions, levelName, onComplete, onBack, initialResults, onPartialProgress }) {
   const { gender } = usePlayer()
+  const [muted, setMuted] = useState(isMuted())
+
+  const handleToggleMute = () => {
+    const newMuted = toggleMute()
+    setMuted(newMuted)
+  }
   const {
     currentQuestion,
     currentIndex,
@@ -57,14 +65,24 @@ export default function GameLevel({ kingdom, levelIndex, questions, levelName, o
     <div className="min-h-screen p-4 flex flex-col relative z-10">
       {/* Header */}
       <div className="flex items-center justify-between mb-4">
-        <motion.button
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-          onClick={onBack}
-          className="glass-card rounded-xl px-4 py-2 text-[#c0b89c] hover:text-white hover:border-white/20 cursor-pointer text-base font-bold transition-all"
-        >
-          ← חזרה
-        </motion.button>
+        <div className="flex items-center gap-2">
+          <motion.button
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            onClick={onBack}
+            className="glass-card rounded-xl px-4 py-2 text-[#c0b89c] hover:text-white hover:border-white/20 cursor-pointer text-base font-bold transition-all"
+          >
+            ← חזרה
+          </motion.button>
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={handleToggleMute}
+            className="glass-card rounded-xl px-3 py-2 text-lg cursor-pointer hover:border-white/20 transition-all"
+          >
+            {muted ? '🔇' : '🔊'}
+          </motion.button>
+        </div>
         <div className="text-center">
           <h2 className="text-lg font-bold text-white">{kingdom.icon} {kingdom.name}</h2>
           <p className="text-sm text-[#8080a0]">{levelName}</p>

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { g } from '../contexts/PlayerContext'
 import { checkPlayerExists, getPlayerCode } from '../hooks/useProgress'
+import { playGameStart } from '../utils/sounds'
 
 const stagger = {
   hidden: {},
@@ -30,6 +31,7 @@ export default function WelcomeScreen({ onStart, totalStars, player, onPlayerCha
     // If returning as the same player, skip collision check
     if (player && getPlayerCode(player) === code) {
       onPlayerChange({ ...newPlayer, gender })
+      playGameStart()
       onStart()
       return
     }
@@ -49,12 +51,14 @@ export default function WelcomeScreen({ onStart, totalStars, player, onPlayerCha
     }
     setChecking(false)
     onPlayerChange(newPlayer)
+    playGameStart()
     onStart()
   }
 
   const handleGuestStart = () => {
     const guestName = g('אורח', 'אורחת', gender)
     onPlayerChange({ name: guestName, pin: null, gender, isGuest: true })
+    playGameStart()
     onStart()
   }
 
